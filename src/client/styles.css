@@ -1,0 +1,136 @@
+/* Provisional functional layout only. Catalog/Jev visual design selection remains blocked. */
+:root {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #111;
+  background: #fff;
+}
+body {
+  margin: 0;
+}
+header,
+main {
+  max-width: 76rem;
+  margin: auto;
+  padding: 1rem;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+a,
+input,
+select {
+  touch-action: manipulation;
+}
+button {
+  padding: 0.4rem 0.7rem;
+  margin: 0.25rem;
+  cursor: pointer;
+}
+button:disabled {
+  cursor: default;
+}
+input,
+select {
+  padding: 0.35rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+fieldset {
+  min-width: 0;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+label {
+  display: block;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #111;
+  outline-offset: 3px;
+}
+.field {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: top;
+  margin: 0.4rem;
+  max-width: 100%;
+}
+[role="alert"],
+[aria-invalid="true"] {
+  border: 2px solid #111;
+  padding: 0.35rem;
+}
+[role="status"] {
+  font-weight: bold;
+}
+.table-scroll {
+  overflow: auto;
+}
+table {
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+th,
+td {
+  border: 1px solid #777;
+  padding: 0.4rem;
+  text-align: right;
+}
+svg {
+  width: 100%;
+  height: auto;
+}
+article {
+  margin: 1rem 0;
+  border-top: 1px solid #777;
+}
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #0008;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal-backdrop > [role="dialog"] {
+  background: #fff;
+  padding: 1.5rem;
+  max-width: 32rem;
+}
+.skip {
+  position: absolute;
+  left: -10000px;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  background: white;
+}
+li {
+  margin-bottom: 1rem;
+}
+@media (max-width: 40rem) {
+  .field {
+    display: flex;
+  }
+  input,
+  select {
+    width: 100%;
+  }
+  header,
+  main {
+    padding: 0.75rem;
+  }
+  fieldset {
+    padding: 0.5rem;
+  }
+}
