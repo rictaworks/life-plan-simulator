@@ -338,21 +338,33 @@ export default function App() {
     );
   if (!session)
     return (
-      <main>
+      <main className="login-shell">
+        <p className="eyebrow">LIFE PLAN / SIMULATOR</p>
         <h1>人生設計シミュレーター</h1>
+        <p className="login-lead">
+          これからの暮らしを、
+          <br />
+          数字で見通す。
+        </p>
         <p>
           手取りから生活費を確保し、残りの貯蓄・投資配分と将来の資産を仮定で試します。
         </p>
         <p>
           Googleログイン後、ご本人専用のサーバーに保存できます。同じGoogleアカウントで別端末から再開できます。Googleのパスワードは本サービスでは受け取りません。
         </p>
-        {notice && <p role="alert">{notice}</p>}
+        {notice && (
+          <p className="notice" role="alert">
+            {notice}
+          </p>
+        )}
         {new URLSearchParams(window.location.search).has("authError") && (
           <p role="alert">
             ログインがキャンセルされたか失敗しました。再試行できます。
           </p>
         )}
-        <a href="/auth/google">Googleでログイン</a>
+        <a className="primary login-action" href="/auth/google">
+          Googleでログイン
+        </a>
         <p>利益を保証せず、商品推奨や税・年金の自動計算は行いません。</p>
         <UsageNotice />
       </main>
@@ -367,332 +379,410 @@ export default function App() {
       <a className="skip" href="#editor">
         条件設定へ移動
       </a>
-      <header>
-        <h1>人生設計シミュレーター</h1>
-        <p>ログイン中: {session.user.email}</p>
-        <a href="#usage-notice">利用上の注意・データの取扱いへ</a>
-        <button
-          disabled={busy}
-          onClick={() =>
-            ask(
-              "ログアウトすると未保存の入力を消去します。",
-              () =>
-                void action(async () => {
-                  await request("/auth/logout", "POST");
-                  clear();
-                  setNotice("ログアウトしました。");
-                }),
-            )
-          }
-        >
-          ログアウト
-        </button>
-        <p role="status">
-          {dirty
-            ? "未保存の変更があります"
-            : saved
-              ? `保存済み: ${saved.updatedAt}`
-              : "まだ保存していません"}
-        </p>
-      </header>
-      <main>
-        {notice && <p role="alert">{notice}</p>}
-        <p>
-          入力は将来の仮定です。計算はブラウザーで行い、自動保存しません。明示的な保存時だけ、財務入力・イベントを本人専用サーバーへ送信します。
-        </p>
-        <button
-          disabled={busy}
-          onClick={() =>
-            protect(
-              "未保存の入力を破棄して架空サンプルに置き換えますか？",
-              () => replace(fresh(true)),
-            )
-          }
-        >
-          架空サンプルを開く
-        </button>
-        <button
-          disabled={busy}
-          onClick={() =>
-            protect("未保存の入力を破棄して新規作成しますか？", () =>
-              replace(fresh()),
-            )
-          }
-        >
-          新規作成
-        </button>
-        <section id="editor" aria-labelledby="editor-title">
-          <h2 id="editor-title">条件設定</h2>
-          <fieldset disabled={busy}>
-            <legend>共通条件</legend>
-            {field(
-              "シナリオ名",
-              "name",
-              input.name,
-              (v) => edit({ ...input, name: v }),
-              "text",
-              { maxLength: 80 },
-            )}
-            {field(
-              "開始年月",
-              "startMonth",
-              input.startMonth,
-              (v) => edit({ ...input, startMonth: v }),
-              "month",
-            )}
-            {field(
-              "期間（か月）",
-              "months",
-              input.months,
-              (v) => edit({ ...input, months: v === "" ? NaN : Number(v) }),
-              "number",
-              { min: 1, max: 600, step: 1 },
-            )}
-          </fieldset>
-          <nav aria-label="比較ケース">
-            {input.cases.map((item, i) => (
-              <button
-                key={item.id}
-                aria-pressed={active === i}
-                onClick={() => setActive(i)}
-              >
-                {item.name || `ケース${i + 1}`}
-              </button>
-            ))}
-          </nav>
-          <button
-            disabled={input.cases.length >= 3 || busy}
-            onClick={() => {
-              const copy = structuredClone(c);
-              copy.id = id();
-              copy.name = `比較${input.cases.length}`;
-              copy.events = copy.events.map((e) => ({ ...e, id: id() }));
-              edit({ ...input, cases: [...input.cases, copy] });
-              setActive(input.cases.length);
-            }}
-          >
-            ケースを複製して比較
-          </button>
-          <button
-            disabled={input.cases.length === 1 || busy}
-            onClick={() =>
-              ask(`「${c.name}」ケースを削除しますか？`, () => {
-                edit({
-                  ...input,
-                  cases: input.cases.filter((_, i) => i !== active),
-                });
-                setActive(0);
-              })
-            }
-          >
-            このケースを削除
-          </button>
-          <fieldset disabled={busy}>
-            <legend>{c.name}の条件</legend>
-            {field(
-              "ケース名",
-              `cases.${active}.name`,
-              c.name,
-              (v) => changeCase("name", v),
-              "text",
-              { maxLength: 40 },
-            )}
-            {(
-              [
-                "income",
-                "living",
-                "cash",
-                "investment",
-                "allocation",
-                "annualReturn",
-                "annualInflation",
-              ] as const
-            ).map((key, i) =>
-              field(
-                [
-                  "月手取り（円）",
-                  "月生活費（円）",
-                  "初期現金（円）",
-                  "初期投資（円）",
-                  "投資配分（%）",
-                  "年利回り（%）",
-                  "年生活費上昇率（%）",
-                ][i]!,
-                `cases.${active}.${key}`,
-                c[key],
-                (v) => changeCase(key, v === "" ? NaN : Number(v)),
-                "number",
-                {
-                  min: key.startsWith("annual") ? -99.99 : 0,
-                  max:
-                    key === "allocation" || key.startsWith("annual")
-                      ? 100
-                      : 1000000000,
-                  step:
-                    key === "allocation"
-                      ? 0.1
-                      : key.startsWith("annual")
-                        ? 0.01
-                        : 1,
-                },
-              ),
-            )}
-            <label htmlFor="allocation-slider">投資配分スライダー</label>
-            <input
-              id="allocation-slider"
-              type="range"
-              min="0"
-              max="100"
-              step="0.1"
-              value={Number.isFinite(c.allocation) ? c.allocation : 0}
-              onChange={(e) => changeCase("allocation", Number(e.target.value))}
-            />
-            <p>
-              生活費を確保した後の黒字を配分します。生活費 {yen(c.living)}
-              （手取りの{pct(c.living)}）、希望貯蓄 {yen(surplus - invest)}（
-              {pct(surplus - invest)}）、希望投資 {yen(invest)}（{pct(invest)}
-              ）。
-            </p>
-            {c.living > c.income && (
-              <p role="alert">
-                通常収支が赤字です。新規の貯蓄・投資配分は0円です。
-              </p>
-            )}
-          </fieldset>
-          <fieldset disabled={busy}>
-            <legend>イベント（最大100件）</legend>
-            <p>
-              期間内の年月を指定します。同じ月の月手取り変更・月生活費変更はそれぞれ1件までです。
-            </p>
-            {c.events
-              .map((e, index) => ({ e, index }))
-              .sort((a, b) => a.e.month.localeCompare(b.e.month))
-              .map(({ e, index }) => {
-                const key = `cases.${active}.events.${index}`;
-                function update(k: keyof EventInput, v: unknown) {
-                  changeCase(
-                    "events",
-                    c.events.map((x, i) =>
-                      i === index ? { ...x, [k]: v } : x,
-                    ),
-                  );
-                }
-                return (
-                  <fieldset key={e.id}>
-                    <legend>イベント {index + 1}</legend>
-                    {field(
-                      "イベント名",
-                      `${key}.name`,
-                      e.name,
-                      (v) => update("name", v),
-                      "text",
-                      { maxLength: 60 },
-                    )}
-                    {field(
-                      "イベント年月",
-                      `${key}.month`,
-                      e.month,
-                      (v) => update("month", v),
-                      "month",
-                    )}
-                    <label htmlFor={`${key}.type`}>イベント種別</label>
-                    <select
-                      id={`${key}.type`}
-                      value={e.type}
-                      onChange={(x) => update("type", x.target.value)}
-                    >
-                      <option value="income">月手取り変更</option>
-                      <option value="living">月生活費変更</option>
-                      <option value="inflow">一時収入</option>
-                      <option value="outflow">一時支出</option>
-                    </select>
-                    {field(
-                      "イベント金額（円）",
-                      `${key}.amount`,
-                      e.amount,
-                      (v) => update("amount", v === "" ? NaN : Number(v)),
-                      "number",
-                      { min: 0, max: 1000000000, step: 1 },
-                    )}
-                    <button
-                      onClick={() =>
-                        ask(`イベント「${e.name}」を削除しますか？`, () =>
-                          changeCase(
-                            "events",
-                            c.events.filter((x) => x.id !== e.id),
-                          ),
-                        )
-                      }
-                    >
-                      イベント {index + 1} を削除
-                    </button>
-                  </fieldset>
-                );
-              })}
-            <button
-              disabled={c.events.length >= 100}
-              onClick={() =>
-                changeCase("events", [
-                  ...c.events,
-                  {
-                    id: id(),
-                    name: "新しいイベント",
-                    month: input.startMonth,
-                    type: "outflow",
-                    amount: 0,
-                  },
-                ])
-              }
-            >
-              イベントを追加
-            </button>
-          </fieldset>
-          {Object.entries(errors)
-            .filter(([path]) => !document.getElementById(path))
-            .map(([path, message]) => (
-              <p role="alert" key={path}>
-                {path}: {message}
-              </p>
-            ))}
-          <button
-            disabled={busy}
-            onClick={() => {
-              const value = valid();
-              if (value) {
-                setResult(structuredClone(value));
-                setStale(false);
-                setNotice("計算が完了しました。");
-              }
-            }}
-          >
-            シミュレーション
-          </button>
-          <button disabled={busy} onClick={() => void persist(false)}>
-            新規としてサーバーに保存
-          </button>
-          {saved && (
+      <header className="app-header">
+        <div className="header-inner">
+          <div className="brand">
+            <span className="brand-mark" aria-hidden="true">
+              L
+            </span>
+            <div>
+              <span className="eyebrow">LIFE PLAN</span>
+              <h1>人生設計シミュレーター</h1>
+            </div>
+          </div>
+          <div className="account">
+            <p>ログイン中: {session.user.email}</p>
+            <a href="#usage-notice">利用上の注意・データの取扱いへ</a>
             <button
               disabled={busy}
               onClick={() =>
                 ask(
-                  `保存済み「${saved.input.name}」を現在の条件で更新しますか？`,
-                  () => void persist(true),
+                  "ログアウトすると未保存の入力を消去します。",
+                  () =>
+                    void action(async () => {
+                      await request("/auth/logout", "POST");
+                      clear();
+                      setNotice("ログアウトしました。");
+                    }),
                 )
               }
             >
-              保存済みシナリオを更新
+              ログアウト
             </button>
-          )}
-        </section>
-        {result && (
-          <>
-            {stale && (
-              <p role="status">入力を変更しました。結果は前回の条件です。</p>
-            )}
-            <Results input={result} />
-          </>
+          </div>
+          <p className="save-status" role="status">
+            {dirty
+              ? "未保存の変更があります"
+              : saved
+                ? `保存済み: ${saved.updatedAt}`
+                : "まだ保存していません"}
+          </p>
+        </div>
+      </header>
+      <main className="app-main">
+        <div className="page-intro">
+          <div>
+            <p className="eyebrow">YOUR LIFE, YOUR PLAN</p>
+            <h2>未来の選択を、比較しよう。</h2>
+            <p>暮らしの条件を変えて、資産の変化を確かめる。</p>
+          </div>
+          <a className="text-link" href="#results-panel">
+            結果を見る <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        {notice && (
+          <p className="notice" role="alert">
+            {notice}
+          </p>
         )}
-        <section aria-labelledby="saved-title">
+        <p className="privacy-note">
+          入力は将来の仮定です。計算はブラウザーで行い、自動保存しません。明示的な保存時だけ、財務入力・イベントを本人専用サーバーへ送信します。
+        </p>
+        <div className="scenario-toolbar">
+          <button
+            disabled={busy}
+            onClick={() =>
+              protect(
+                "未保存の入力を破棄して架空サンプルに置き換えますか？",
+                () => replace(fresh(true)),
+              )
+            }
+          >
+            架空サンプルを開く
+          </button>
+          <button
+            disabled={busy}
+            onClick={() =>
+              protect("未保存の入力を破棄して新規作成しますか？", () =>
+                replace(fresh()),
+              )
+            }
+          >
+            新規作成
+          </button>
+        </div>
+        <div className="workspace-grid">
+          <section
+            className="editor-panel panel"
+            id="editor"
+            aria-labelledby="editor-title"
+          >
+            <div className="section-heading">
+              <span className="step-number">01</span>
+              <h2 id="editor-title">条件設定</h2>
+            </div>
+            <p className="section-description">
+              共通条件とケースごとの仮定を入力してください。
+            </p>
+            <fieldset disabled={busy}>
+              <legend>共通条件</legend>
+              {field(
+                "シナリオ名",
+                "name",
+                input.name,
+                (v) => edit({ ...input, name: v }),
+                "text",
+                { maxLength: 80 },
+              )}
+              {field(
+                "開始年月",
+                "startMonth",
+                input.startMonth,
+                (v) => edit({ ...input, startMonth: v }),
+                "month",
+              )}
+              {field(
+                "期間（か月）",
+                "months",
+                input.months,
+                (v) => edit({ ...input, months: v === "" ? NaN : Number(v) }),
+                "number",
+                { min: 1, max: 600, step: 1 },
+              )}
+            </fieldset>
+            <nav className="case-tabs" aria-label="比較ケース">
+              {input.cases.map((item, i) => (
+                <button
+                  key={item.id}
+                  aria-pressed={active === i}
+                  onClick={() => setActive(i)}
+                >
+                  {item.name || `ケース${i + 1}`}
+                </button>
+              ))}
+            </nav>
+            <button
+              disabled={input.cases.length >= 3 || busy}
+              onClick={() => {
+                const copy = structuredClone(c);
+                copy.id = id();
+                copy.name = `比較${input.cases.length}`;
+                copy.events = copy.events.map((e) => ({ ...e, id: id() }));
+                edit({ ...input, cases: [...input.cases, copy] });
+                setActive(input.cases.length);
+              }}
+            >
+              ケースを複製して比較
+            </button>
+            <button
+              className="danger"
+              disabled={input.cases.length === 1 || busy}
+              onClick={() =>
+                ask(`「${c.name}」ケースを削除しますか？`, () => {
+                  edit({
+                    ...input,
+                    cases: input.cases.filter((_, i) => i !== active),
+                  });
+                  setActive(0);
+                })
+              }
+            >
+              このケースを削除
+            </button>
+            <fieldset disabled={busy}>
+              <legend>{c.name}の条件</legend>
+              {field(
+                "ケース名",
+                `cases.${active}.name`,
+                c.name,
+                (v) => changeCase("name", v),
+                "text",
+                { maxLength: 40 },
+              )}
+              {(
+                [
+                  "income",
+                  "living",
+                  "cash",
+                  "investment",
+                  "allocation",
+                  "annualReturn",
+                  "annualInflation",
+                ] as const
+              ).map((key, i) =>
+                field(
+                  [
+                    "月手取り（円）",
+                    "月生活費（円）",
+                    "初期現金（円）",
+                    "初期投資（円）",
+                    "投資配分（%）",
+                    "年利回り（%）",
+                    "年生活費上昇率（%）",
+                  ][i]!,
+                  `cases.${active}.${key}`,
+                  c[key],
+                  (v) => changeCase(key, v === "" ? NaN : Number(v)),
+                  "number",
+                  {
+                    min: key.startsWith("annual") ? -99.99 : 0,
+                    max:
+                      key === "allocation" || key.startsWith("annual")
+                        ? 100
+                        : 1000000000,
+                    step:
+                      key === "allocation"
+                        ? 0.1
+                        : key.startsWith("annual")
+                          ? 0.01
+                          : 1,
+                  },
+                ),
+              )}
+              <label htmlFor="allocation-slider">投資配分スライダー</label>
+              <input
+                id="allocation-slider"
+                type="range"
+                min="0"
+                max="100"
+                step="0.1"
+                value={Number.isFinite(c.allocation) ? c.allocation : 0}
+                onChange={(e) =>
+                  changeCase("allocation", Number(e.target.value))
+                }
+              />
+              <p>
+                生活費を確保した後の黒字を配分します。生活費 {yen(c.living)}
+                （手取りの{pct(c.living)}）、希望貯蓄 {yen(surplus - invest)}（
+                {pct(surplus - invest)}）、希望投資 {yen(invest)}（{pct(invest)}
+                ）。
+              </p>
+              {c.living > c.income && (
+                <p role="alert">
+                  通常収支が赤字です。新規の貯蓄・投資配分は0円です。
+                </p>
+              )}
+            </fieldset>
+            <fieldset disabled={busy}>
+              <legend>イベント（最大100件）</legend>
+              <p>
+                期間内の年月を指定します。同じ月の月手取り変更・月生活費変更はそれぞれ1件までです。
+              </p>
+              {c.events
+                .map((e, index) => ({ e, index }))
+                .sort((a, b) => a.e.month.localeCompare(b.e.month))
+                .map(({ e, index }) => {
+                  const key = `cases.${active}.events.${index}`;
+                  function update(k: keyof EventInput, v: unknown) {
+                    changeCase(
+                      "events",
+                      c.events.map((x, i) =>
+                        i === index ? { ...x, [k]: v } : x,
+                      ),
+                    );
+                  }
+                  return (
+                    <fieldset key={e.id}>
+                      <legend>イベント {index + 1}</legend>
+                      {field(
+                        "イベント名",
+                        `${key}.name`,
+                        e.name,
+                        (v) => update("name", v),
+                        "text",
+                        { maxLength: 60 },
+                      )}
+                      {field(
+                        "イベント年月",
+                        `${key}.month`,
+                        e.month,
+                        (v) => update("month", v),
+                        "month",
+                      )}
+                      <label htmlFor={`${key}.type`}>イベント種別</label>
+                      <select
+                        id={`${key}.type`}
+                        value={e.type}
+                        onChange={(x) => update("type", x.target.value)}
+                      >
+                        <option value="income">月手取り変更</option>
+                        <option value="living">月生活費変更</option>
+                        <option value="inflow">一時収入</option>
+                        <option value="outflow">一時支出</option>
+                      </select>
+                      {field(
+                        "イベント金額（円）",
+                        `${key}.amount`,
+                        e.amount,
+                        (v) => update("amount", v === "" ? NaN : Number(v)),
+                        "number",
+                        { min: 0, max: 1000000000, step: 1 },
+                      )}
+                      <button
+                        className="danger"
+                        onClick={() =>
+                          ask(`イベント「${e.name}」を削除しますか？`, () =>
+                            changeCase(
+                              "events",
+                              c.events.filter((x) => x.id !== e.id),
+                            ),
+                          )
+                        }
+                      >
+                        イベント {index + 1} を削除
+                      </button>
+                    </fieldset>
+                  );
+                })}
+              <button
+                disabled={c.events.length >= 100}
+                onClick={() =>
+                  changeCase("events", [
+                    ...c.events,
+                    {
+                      id: id(),
+                      name: "新しいイベント",
+                      month: input.startMonth,
+                      type: "outflow",
+                      amount: 0,
+                    },
+                  ])
+                }
+              >
+                イベントを追加
+              </button>
+            </fieldset>
+            {Object.entries(errors)
+              .filter(([path]) => !document.getElementById(path))
+              .map(([path, message]) => (
+                <p role="alert" key={path}>
+                  {path}: {message}
+                </p>
+              ))}
+            <div className="editor-actions">
+              <button
+                className="primary"
+                disabled={busy}
+                onClick={() => {
+                  const value = valid();
+                  if (value) {
+                    setResult(structuredClone(value));
+                    setStale(false);
+                    setNotice("計算が完了しました。");
+                  }
+                }}
+              >
+                シミュレーション
+              </button>
+              <button disabled={busy} onClick={() => void persist(false)}>
+                新規としてサーバーに保存
+              </button>
+              {saved && (
+                <button
+                  className="danger"
+                  disabled={busy}
+                  onClick={() =>
+                    ask(
+                      `保存済み「${saved.input.name}」を現在の条件で更新しますか？`,
+                      () => void persist(true),
+                    )
+                  }
+                >
+                  保存済みシナリオを更新
+                </button>
+              )}
+            </div>
+          </section>
+          <div id="results-panel" className="results-panel">
+            {result ? (
+              <>
+                {stale && (
+                  <p role="status">
+                    入力を変更しました。結果は前回の条件です。
+                  </p>
+                )}
+                <Results input={result} />
+              </>
+            ) : (
+              <section
+                className="panel empty-results"
+                aria-labelledby="empty-title"
+              >
+                <p className="eyebrow">SIMULATION</p>
+                <div className="empty-chart" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                  <span />
+                  <span />
+                </div>
+                <h2 id="empty-title">あなたの未来を、ここに。</h2>
+                <p>
+                  条件を入力して「シミュレーション」を押すと、資産推移と月次明細を確認できます。
+                </p>
+                <ol>
+                  <li>手取り・生活費・現在資産を入力</li>
+                  <li>貯蓄と投資の配分を調整</li>
+                  <li>最大3ケースで将来の仮定を比較</li>
+                </ol>
+                <p className="muted">
+                  まずは「架空サンプルを開く」から試せます。
+                </p>
+              </section>
+            )}
+          </div>
+        </div>
+        <section className="panel saved-panel" aria-labelledby="saved-title">
           <h2 id="saved-title">本人専用の保存管理</h2>
           <p>
             保存先は本サービスのサーバーです。同じGoogleアカウントなら別端末から再開できます。削除は稼働系に反映します。バックアップ保持方針は公開前に確定するため、現在は公開前の実装です。
@@ -701,6 +791,7 @@ export default function App() {
             一覧を再読込
           </button>
           <button
+            className="danger"
             disabled={busy || !list.length}
             onClick={() =>
               ask(
@@ -721,7 +812,7 @@ export default function App() {
             全保存データを削除
           </button>
           {!list.length && <p>保存シナリオはありません。</p>}
-          <ul>
+          <ul className="saved-list">
             {list.map((s) => (
               <li key={s.id}>
                 <strong>{s.input.name}</strong> — 更新 {s.updatedAt}
@@ -755,6 +846,7 @@ export default function App() {
                   「{s.input.name}」を複製
                 </button>
                 <button
+                  className="danger"
                   disabled={busy}
                   onClick={() =>
                     ask(

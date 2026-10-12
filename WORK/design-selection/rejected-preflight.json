@@ -1,0 +1,27 @@
+{
+  "model": "jev-1.13.0",
+  "catalog_count": 94,
+  "catalog_blob_sha": "ec944a0369e14779cde9b9ceb6c0de2f02dc3766",
+  "request_sha256": "2b7de44c7f8df56d82de7c09ba1c8083f02e28b17917695a87379d79ab724e3c",
+  "estimated_token_counts": {
+    "cl100k_base": {
+      "state": 29982,
+      "longest_question": 775,
+      "state_plus_longest_question": 30757,
+      "total": 30776
+    },
+    "o200k_base": {
+      "state": 30179,
+      "longest_question": 715,
+      "state_plus_longest_question": 30894,
+      "total": 30912
+    }
+  },
+  "threshold_before_request": 0.7,
+  "maximum_requests": 1,
+  "token_limits": {
+    "total": 64000,
+    "state_plus_longest_question": 32000
+  },
+  "tokenizer_caveat": "Provider tokenizer not published in checked API documentation; two local tokenizers are estimates, not an exact provider count."
+}

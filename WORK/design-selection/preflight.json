@@ -1,0 +1,52 @@
+{
+  "model": "jev-1.13.0",
+  "catalog_count": 94,
+  "catalog_blob_sha": "ec944a0369e14779cde9b9ceb6c0de2f02dc3766",
+  "request_sha256": "278cfbbeb0c66db27dd43547aa5498b0ea917d07f5aa9d2feeb634263bb5a03f",
+  "estimated_token_counts": {
+    "cl100k_base": {
+      "state": 21753,
+      "longest_question": 775,
+      "state_plus_longest_question": 22528,
+      "total": 22547
+    },
+    "o200k_base": {
+      "state": 21969,
+      "longest_question": 715,
+      "state_plus_longest_question": 22684,
+      "total": 22702
+    }
+  },
+  "threshold_before_request": 0.7,
+  "token_limits": {
+    "total": 64000,
+    "state_plus_longest_question": 32000
+  },
+  "tokenizer_caveat": "Provider tokenizer not published in checked API documentation; two local tokenizers are estimates, not an exact provider count.",
+  "attempts": {
+    "total_http_posts": 3,
+    "initial_size_rejections": 2,
+    "successful_evaluations": 1,
+    "further_calls_planned": 0
+  },
+  "projection_fields": [
+    "name",
+    "mood",
+    "background",
+    "palette",
+    "fonts",
+    "shape",
+    "intended_use"
+  ],
+  "projection_omissions": [
+    "id",
+    "status",
+    "readme_lines",
+    "imagery",
+    "note"
+  ],
+  "provider_reported_input_tokens": 32256,
+  "provider_reported_output_tokens": 959,
+  "accepted_by_provider": true,
+  "adoption_status": "pending human confirmation: confidence 0.21 below preset threshold 0.70"
+}
