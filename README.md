@@ -14,4 +14,4 @@ API一覧: [認証・保存API仕様](SPEC/api.md) に全エンドポイント�
 
 コミット前は独立securityレビュー、マージ前はreviewer/pr-checkerの実施記録を `scripts/review-gate.mjs` で現在のファイル内容に紐付けます。ローカルのコミットフックは `git config core.hooksPath .githooks` で有効にします。マージ前には `sh scripts/pre-merge.sh` を明示的に実行します。記録は担当者によるレビュー完了の申告であり、自動のコードレビューやGitHub上のマージ制限ではありません。記録はレビュー完了後にのみ作成し、ファイル変更後は再レビューします。CIは検証のみでデプロイしません。
 
-公開前設定は [ENV/PRODUCTION.md](ENV/PRODUCTION.md) を参照してください。実施結果は [WORK](WORK) に記録しています。視覚デザインは、全94候補へのJev評価と低信頼度結果に対する人の採用承認を経た `veliora-sales` です。[選定・採用証跡](WORK/design-access.md)と[画面仕様](app-ui/README.md)を参照してください。公開サンプルの紺・オレンジを既存の認証付きアプリへ適用しており、Google本番認証や公開運用の構成完了を意味しません。
+Railwayの`HOST=0.0.0.0`・提供`PORT`、ビルド/本番依存の分離と公開前設定は [ENV/PRODUCTION.md](ENV/PRODUCTION.md) を参照してください。実施結果は [WORK](WORK) に記録しています。視覚デザインは、全94候補へのJev評価と低信頼度結果に対する人の採用承認を経た `veliora-sales` です。[選定・採用証跡](WORK/design-access.md)と[画面仕様](app-ui/README.md)を参照してください。公開サンプルの紺・オレンジを既存の認証付きアプリへ適用しており、Google本番認証や公開運用の構成完了を意味しません。

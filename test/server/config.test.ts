@@ -31,6 +31,7 @@ describe("runtime configuration", () => {
       origin: "https://app.example",
       production: true,
       port: 3000,
+      host: "127.0.0.1",
       redirectUri: "https://app.example/auth/callback",
     });
     expect(
@@ -47,5 +48,15 @@ describe("runtime configuration", () => {
         APP_ORIGIN: "http://public.example",
       }),
     ).toThrow();
+  });
+  it("requires explicit all-interface binding and rejects ambiguous hosts", () => {
+    expect(loadConfig({ ...env, HOST: "0.0.0.0", PORT: "8080" })).toMatchObject(
+      {
+        host: "0.0.0.0",
+        port: 8080,
+      },
+    );
+    for (const host of ["", "localhost", "::", "example.com", " 0.0.0.0"])
+      expect(() => loadConfig({ ...env, HOST: host })).toThrow("HOST must be");
   });
 });

@@ -21,9 +21,9 @@ try {
   const dist = resolve("dist");
   app.use(express.static(dist, { etag: false, lastModified: false }));
   app.get("/", (_req, res) => res.sendFile(resolve(dist, "index.html")));
-  // The reverse proxy must terminate TLS and forward to this loopback listener.
+  // The platform/reverse proxy terminates TLS. Exposure requires explicit HOST.
   // Forwarded headers are not trusted; no configurable trust-proxy security bypass.
-  const server = app.listen(config.port, "127.0.0.1");
+  const server = app.listen(config.port, config.host);
   const stop = () => {
     server.close(() => {
       db.close();
