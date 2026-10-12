@@ -11,6 +11,7 @@ import { z } from "zod";
 import { scenarioSchema } from "../domain/schema.js";
 import { Store, StoreError, ABSOLUTE_MS, type Session } from "./store.js";
 import type { IdentityProvider } from "./oidc.js";
+import { rateLimitKey, type RateLimitIpSource } from "./rate-limit-key.js";
 
 type Transaction = {
   state: string;
@@ -24,6 +25,7 @@ export type AppOptions = {
   origin: string;
   production: boolean;
   clock?: () => number;
+  rateLimitIpSource?: RateLimitIpSource;
 };
 const token = () => randomBytes(32).toString("base64url");
 const equal = (a: unknown, b: string) =>
@@ -44,9 +46,11 @@ export function createApp({
   origin,
   production,
   clock = Date.now,
+  rateLimitIpSource = "socket",
 }: AppOptions) {
   const app = express();
   app.disable("x-powered-by");
+  app.set("trust proxy", false);
   const transactions = new Map<string, Transaction>();
   const cookie = {
     httpOnly: true,
@@ -77,7 +81,9 @@ export function createApp({
   });
   app.use(cookieParser());
   app.use(express.json({ limit: "256kb", strict: true }));
+  const keyGenerator = (req: Request) => rateLimitKey(req, rateLimitIpSource);
   const loginLimit = rateLimit({
+    keyGenerator,
     windowMs: 15 * 60 * 1000,
     limit: 30,
     standardHeaders: "draft-8",
@@ -87,6 +93,7 @@ export function createApp({
     },
   });
   const apiLimit = rateLimit({
+    keyGenerator,
     windowMs: 60 * 1000,
     limit: 180,
     standardHeaders: "draft-8",
@@ -198,15 +205,13 @@ export function createApp({
   app.post("/api/scenarios", (req, res) => {
     const parsed = createBody.safeParse(req.body);
     if (!parsed.success) {
-      res
-        .status(400)
-        .json({
-          error: "invalid_input",
-          issues: parsed.error.issues.map((i) => ({
-            path: i.path,
-            message: i.message,
-          })),
-        });
+      res.status(400).json({
+        error: "invalid_input",
+        issues: parsed.error.issues.map((i) => ({
+          path: i.path,
+          message: i.message,
+        })),
+      });
       return;
     }
     res.status(201).json(store.create(owner(res), parsed.data.input, clock()));
@@ -214,15 +219,13 @@ export function createApp({
   app.put("/api/scenarios/:id", (req, res) => {
     const parsed = updateBody.safeParse(req.body);
     if (!parsed.success) {
-      res
-        .status(400)
-        .json({
-          error: "invalid_input",
-          issues: parsed.error.issues.map((i) => ({
-            path: i.path,
-            message: i.message,
-          })),
-        });
+      res.status(400).json({
+        error: "invalid_input",
+        issues: parsed.error.issues.map((i) => ({
+          path: i.path,
+          message: i.message,
+        })),
+      });
       return;
     }
     res.json(

@@ -82,6 +82,7 @@ export async function checkProductionStart(runtimeDirectory = process.cwd()) {
         DATABASE_PATH: databasePath,
         PORT: String(port),
         ...(host === undefined ? {} : { HOST: host }),
+        ...(host === "0.0.0.0" ? { RATE_LIMIT_IP_SOURCE: "railway-edge" } : {}),
       };
       const child = spawn(
         process.execPath,
@@ -219,6 +220,30 @@ export async function checkProductionStart(runtimeDirectory = process.cwd()) {
               fetch(`http://${external}:${port}/api/session`, {
                 signal: AbortSignal.timeout(1000),
               }),
+            );
+          }
+        }
+        if (host === "0.0.0.0") {
+          // Verify the production config reaches the real app limiter; this
+          // synthetic header check does not prove Railway's external edge policy.
+          for (const [ip, expected] of [
+            ["192.0.2.10", 179],
+            ["192.0.2.11", 179],
+            ["192.0.2.10", 178],
+          ]) {
+            const edge = await fetch(`${base}/api/scenarios`, {
+              headers: {
+                "X-Real-IP": ip,
+                "X-Forwarded-For": "198.51.100.99",
+                Forwarded: "for=203.0.113.99",
+              },
+              signal: AbortSignal.timeout(2000),
+            });
+            assert.equal(edge.status, 401);
+            assert.deepEqual(await edge.json(), { error: "unauthorized" });
+            assert.equal(
+              Number(edge.headers.get("ratelimit")?.match(/\br=(\d+)/)?.[1]),
+              expected,
             );
           }
         }
