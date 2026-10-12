@@ -32,6 +32,7 @@ describe("runtime configuration", () => {
       production: true,
       port: 3000,
       host: "127.0.0.1",
+      rateLimitIpSource: "socket",
       redirectUri: "https://app.example/auth/callback",
     });
     expect(
@@ -59,4 +60,15 @@ describe("runtime configuration", () => {
     for (const host of ["", "localhost", "::", "example.com", " 0.0.0.0"])
       expect(() => loadConfig({ ...env, HOST: host })).toThrow("HOST must be");
   });
+});
+
+it("only enables Railway IP assertions by explicit valid configuration", () => {
+  expect(
+    loadConfig({ ...env, RATE_LIMIT_IP_SOURCE: "railway-edge" })
+      .rateLimitIpSource,
+  ).toBe("railway-edge");
+  for (const value of ["", "true", "1", "railway", " railway-edge"])
+    expect(() => loadConfig({ ...env, RATE_LIMIT_IP_SOURCE: value })).toThrow(
+      "RATE_LIMIT_IP_SOURCE must be",
+    );
 });

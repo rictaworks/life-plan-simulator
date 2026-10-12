@@ -1,4 +1,5 @@
 import { isAbsolute } from "node:path";
+import type { RateLimitIpSource } from "./rate-limit-key.js";
 
 export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
   const required = (name: string) => {
@@ -37,6 +38,9 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
   const host = env.HOST ?? "127.0.0.1";
   if (host !== "127.0.0.1" && host !== "0.0.0.0")
     throw Error("HOST must be 127.0.0.1 or 0.0.0.0");
+  const rateLimitIpSource = env.RATE_LIMIT_IP_SOURCE ?? "socket";
+  if (rateLimitIpSource !== "socket" && rateLimitIpSource !== "railway-edge")
+    throw Error("RATE_LIMIT_IP_SOURCE must be socket or railway-edge");
   return {
     origin,
     production,
@@ -46,6 +50,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
     databasePath,
     port,
     host,
+    rateLimitIpSource: rateLimitIpSource as RateLimitIpSource,
     redirectUri: `${origin}/auth/callback`,
   };
 }

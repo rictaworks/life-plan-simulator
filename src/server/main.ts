@@ -22,7 +22,7 @@ try {
   app.use(express.static(dist, { etag: false, lastModified: false }));
   app.get("/", (_req, res) => res.sendFile(resolve(dist, "index.html")));
   // The platform/reverse proxy terminates TLS. Exposure requires explicit HOST.
-  // Forwarded headers are not trusted; no configurable trust-proxy security bypass.
+  // Global proxy trust stays off; optional client-IP handling is rate-limit-only.
   const server = app.listen(config.port, config.host);
   const stop = () => {
     server.close(() => {
