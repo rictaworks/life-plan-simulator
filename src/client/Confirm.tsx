@@ -43,7 +43,9 @@ export default function Confirm({
         <button ref={cancel} onClick={onCancel}>
           キャンセル
         </button>
-        <button onClick={onConfirm}>確認して実行</button>
+        <button className="primary" onClick={onConfirm}>
+          確認して実行
+        </button>
       </div>
     </div>
   );

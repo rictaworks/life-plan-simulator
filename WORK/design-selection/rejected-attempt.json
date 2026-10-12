@@ -1,0 +1,10 @@
+{
+  "attempted_at": "2026-10-12T00:01:59.063269+00:00",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "method": "POST",
+  "request_sha256": "2b7de44c7f8df56d82de7c09ba1c8083f02e28b17917695a87379d79ab724e3c",
+  "credential_source": "TYPESAFE_API_KEY environment placeholder via configured HTTPS proxy; value never recorded",
+  "redirects_allowed": false,
+  "http_status": 400,
+  "outcome": "HTTP error; no Jev selection recorded"
+}

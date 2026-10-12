@@ -1,0 +1,5 @@
+{
+  "purpose": "One bounded size correction after max_tokens_exceeded; all 94 candidates retained",
+  "time": "2026-10-12T00:03:07.934082+00:00",
+  "http_status": 200
+}

@@ -1,0 +1,12 @@
+{
+  "purpose": "One identical retry to identify the HTTP 400 blocker; no changes to selection or credentials",
+  "time": "2026-10-12T00:02:35.115053+00:00",
+  "http_status": 400,
+  "error_categories": [
+    "max_tokens_exceeded",
+    "token"
+  ],
+  "error_json_keys": [
+    "detail"
+  ]
+}

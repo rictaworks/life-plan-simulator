@@ -1,0 +1,3311 @@
+{
+  "_note": "Claude Design のデザインシステム（list_design_systems の全件）のメタデータ。READMEを全文読んで1件ずつ埋める。選ぶのはClaudeではなくJev（分類器）。status: unread=未読 / read=READMEを最終行まで読んだ。案件を問わず再利用する。",
+  "_listed_on": "2026-10-02",
+  "_how_to_read": "mcp__claude_design__read_file {project_id:<id>, path:'readme.md'} を全行（total_lines まで offset/limit で分けて）読む。冒頭だけ・件数や名前での絞り込みは禁止。",
+  "_fields": "readme_lines, mood, background(dark|light|mixed), palette{primary,accent,accent_hue,backgrounds,text}, fonts{display,body,jp}, shape{radius,shadow}, imagery, intended_use, note",
+  "systems": [
+    {
+      "id": "966f032f-46d2-4661-bd09-314fb897ca8d",
+      "name": "veyra-tower",
+      "status": "read",
+      "readme_lines": 69,
+      "mood": "dark cinematic one-page brand site; lightning-struck tower theme, 'disruption and reconstruction'; glowing embers/sparks",
+      "background": "dark",
+      "palette": {
+        "primary": "#ff6b00",
+        "accent": "#ff6b00",
+        "accent_hue": "orange (single accent)",
+        "backgrounds": [
+          "#070709",
+          "#0d0d0f",
+          "#1d1d24"
+        ],
+        "text": [
+          "#e2e8f0",
+          "#b8c1cc",
+          "#7d8896"
+        ]
+      },
+      "fonts": {
+        "display": "Syncopate 700 (wide geometric caps)",
+        "body": "Montserrat",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "tight 4-14px",
+        "shadow": "orange glows, negative spread"
+      },
+      "imagery": "dark high-contrast, warm orange light on black; lightning tower, fractured concrete",
+      "intended_use": "dramatic brand landing page (Hero/Concept/Solutions/Impact/Process/FAQ)",
+      "note": "no secondary hue; text gradients; ember particles"
+    },
+    {
+      "id": "fb48ed8d-142c-4708-8462-f93eca77a338",
+      "name": "veyra-devil",
+      "status": "read",
+      "readme_lines": 71,
+      "mood": "gothic luxury; black-brown void, candle/ember light, engraved Roman capitals",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a24a",
+        "accent": "#c11f1f",
+        "accent_hue": "crimson/ember red + antique gold (two accents)",
+        "backgrounds": [
+          "#0a0605",
+          "#1d1310"
+        ],
+        "text": [
+          "#efe4d4",
+          "#cdbeae",
+          "#8c7d6f"
+        ]
+      },
+      "fonts": {
+        "display": "Cinzel",
+        "body": "Noto Sans JP",
+        "jp": "Noto Serif JP (headings), Noto Sans JP (body)"
+      },
+      "shape": {
+        "radius": "restrained 4-6px",
+        "shadow": "crimson glows"
+      },
+      "imagery": "warm low-key candlelit, ember smoke",
+      "intended_use": "dramatic luxury landing page",
+      "note": "gold gradient headings; ember particles; no cool colors, no white"
+    },
+    {
+      "id": "2bfce2ec-975d-4645-a4c9-16086958db5e",
+      "name": "veyra-temperance",
+      "status": "read",
+      "readme_lines": 66,
+      "mood": "brand site with alternating cream and navy sections; deep navy, antique gold hairlines, warm cream, wide-tracked classical serifs",
+      "background": "mixed",
+      "palette": {
+        "primary": "#264277",
+        "accent": "#c4a35a",
+        "accent_hue": "antique gold (sparingly, lines/icons)",
+        "backgrounds": [
+          "#0e1a33",
+          "#f3eee4",
+          "#faf6ee",
+          "#ffffff"
+        ],
+        "text": [
+          "#22304d",
+          "#4a566e",
+          "#7c8397"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant SC / Cormorant Garamond",
+        "body": "Noto Serif JP",
+        "jp": "Noto Serif JP, Zen Kaku Gothic New"
+      },
+      "shape": {
+        "radius": "nearly square 2-4px",
+        "shadow": "long soft navy-tinted"
+      },
+      "imagery": "warm low-key still lifes and workspaces; navy+gold+cream",
+      "intended_use": "classical premium services brand",
+      "note": "all-serif UI; gold only as 1px lines/icons"
+    },
+    {
+      "id": "d58f6e68-fd1e-4292-ac68-ccc142c0309d",
+      "name": "veyra-death",
+      "status": "read",
+      "readme_lines": 68,
+      "mood": "dark high-contrast red-accented language for Japanese landing pages; crisis/tension tone",
+      "background": "dark",
+      "palette": {
+        "primary": "#e21221",
+        "accent": "#e21221",
+        "accent_hue": "red (single accent)",
+        "backgrounds": [
+          "#050506",
+          "#16161b"
+        ],
+        "text": [
+          "#f4f4f6",
+          "#9a9aa4",
+          "#6a6a73"
+        ]
+      },
+      "fonts": {
+        "display": "Anton, Oswald",
+        "body": "Noto Sans JP 400-900",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "zero",
+        "shadow": "red glows"
+      },
+      "imagery": "cold dark grungy industrial; B&W with red cast; shattered glass, server rooms, ruins",
+      "intended_use": "dramatic problem/crisis-driven landing page",
+      "note": "clipped-notch button; heavy 900 headlines"
+    },
+    {
+      "id": "b704a7f9-39cb-4b7e-bce7-0a60ce3d1444",
+      "name": "veyra-hanged",
+      "status": "read",
+      "readme_lines": 73,
+      "mood": "nocturnal, ceremonial, quiet luxury; deep navy-black with single antique-gold accent; inverted-perspective motif",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a24b",
+        "accent": "#c9a24b",
+        "accent_hue": "antique gold (single accent)",
+        "backgrounds": [
+          "#05070f",
+          "#0a0e1c",
+          "#0f1526",
+          "#141b30"
+        ],
+        "text": [
+          "#ece4d2",
+          "#8b8f9e",
+          "#6b7082"
+        ]
+      },
+      "fonts": {
+        "display": "Cinzel, Cormorant Garamond",
+        "body": "Zen Kaku Gothic New 300",
+        "jp": "Shippori Mincho 600 (headings)"
+      },
+      "shape": {
+        "radius": "2px",
+        "shadow": "gold glows only"
+      },
+      "imagery": "dark low-key, warm gold highlights; mist, stone, gem facets",
+      "intended_use": "mystical luxury landing page",
+      "note": "gold dust particles; slow soft motion"
+    },
+    {
+      "id": "03a1dd27-1c3d-4cff-9b78-b7719a5ecd48",
+      "name": "veyra-justice",
+      "status": "read",
+      "readme_lines": 362,
+      "mood": "formal navy-and-gold identity for a Japanese legal practice; composed, institutional, exact; square corners, generous leading",
+      "background": "mixed",
+      "palette": {
+        "primary": "#0f1d33 (navy-800)",
+        "accent": "#c9a96a",
+        "accent_hue": "antique gold (single accent; text-safe #9a7b2e on ivory)",
+        "backgrounds": [
+          "#fbfaf7",
+          "#d6cfc2",
+          "#0f1d33"
+        ],
+        "text": [
+          "navy ink",
+          "white at 76%/56% on navy"
+        ]
+      },
+      "fonts": {
+        "display": "Shippori Mincho B1 (headings), Cormorant Garamond (wordmark, eyebrows, numerals)",
+        "body": "Noto Sans JP",
+        "jp": "Shippori Mincho B1 / Noto Sans JP"
+      },
+      "shape": {
+        "radius": "2px cards, 0 buttons",
+        "shadow": "navy-tinted soft, 5 levels, used sparingly"
+      },
+      "imagery": "cool desaturated photography pulled toward navy with scrims",
+      "intended_use": "legal / institutional professional services landing page",
+      "note": "~70% ivory, 25% navy, 5% gold; gold never fills a surface larger than a button; flat colour bands, no gradient backgrounds; Lucide thin-outline icons substituted; fonts substituted"
+    },
+    {
+      "id": "16c8c3ab-76cf-402f-8028-fbfa72d77719",
+      "name": "veyra-wheel",
+      "status": "read",
+      "readme_lines": 192,
+      "mood": "Japanese corporate one-page; deep navy field with a single gold accent; slowly rotating brand marks (golden spiral, orbit sphere)",
+      "background": "dark",
+      "palette": {
+        "primary": "#0b2042",
+        "accent": "#cba35a",
+        "accent_hue": "gold (single accent; bright #ecd08a, deep #9c7935)",
+        "backgrounds": [
+          "#06122a",
+          "#081a36",
+          "#0b2042",
+          "#0d264c",
+          "#040d1f"
+        ],
+        "text": [
+          "#ece7d8",
+          "#ffffff (headings)",
+          "#93a4bf (secondary, cool blue-grey)"
+        ]
+      },
+      "fonts": {
+        "display": "Shippori Mincho 600-800 / Cormorant Garamond",
+        "body": "Noto Sans JP 300",
+        "jp": "Shippori Mincho / Noto Sans JP"
+      },
+      "shape": {
+        "radius": "3px buttons, 6px cards, 10px CTA banner",
+        "shadow": "gold glow on buttons; black drop on hover only"
+      },
+      "imagery": "cool starfield over mountains (hero) and warm candle-bokeh stone (CTA), both drowned in navy",
+      "intended_use": "premium corporate / services landing page",
+      "note": "CSS-only conic-gradient ornaments; no semantic status colours; Font Awesome solid icons"
+    },
+    {
+      "id": "eaf98305-102b-457f-97f1-969ccdc400ea",
+      "name": "veyra-hermit",
+      "status": "read",
+      "readme_lines": 246,
+      "mood": "nocturnal, unhurried, luxury-adjacent ('a ryokan's website'); near-black with faint blue-violet cast and a single gold accent",
+      "background": "dark",
+      "palette": {
+        "primary": "#c7a45a",
+        "accent": "#c7a45a",
+        "accent_hue": "gold (single accent; bright #e4c787, deep #9a7d3f)",
+        "backgrounds": [
+          "#0a0a11",
+          "#0f0f18",
+          "#13131f"
+        ],
+        "text": [
+          "#ece7dc",
+          "#c9c3b6",
+          "#8a857a"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 500",
+        "body": "Shippori Mincho (all Japanese)",
+        "jp": "Shippori Mincho; Zen Kaku Gothic New only for one pill"
+      },
+      "shape": {
+        "radius": "2-16px by size; circles for icons",
+        "shadow": "gold glow = elevation; black depth only on hover"
+      },
+      "imagery": "night photography: starfields, lanterns, mountain silhouettes; dimmed with gold bloom",
+      "intended_use": "luxury hospitality / premium quiet brand",
+      "note": "asymmetric two-column grids; extravagant line-height 1.9-2.05; wide tracking; no semantic status colours"
+    },
+    {
+      "id": "bceb0e05-b104-4b84-881d-a21c01b64baf",
+      "name": "veyra-strength",
+      "status": "read",
+      "readme_lines": 215,
+      "mood": "premium personal-strength-training brand presented as heritage luxury / private atelier; gold on near-black, classical serifs, laurel and lion imagery; restrained, quietly expensive",
+      "background": "mixed",
+      "palette": {
+        "primary": "#c9a55c",
+        "accent": "#c9a55c",
+        "accent_hue": "gold (single accent; bright #e0bf76, deep #a9853f)",
+        "backgrounds": [
+          "#0e0b07",
+          "#181309",
+          "#1c160d",
+          "#fbf8f2",
+          "#f6f2ea",
+          "#efe9dd"
+        ],
+        "text": [
+          "#322b1e (on light)",
+          "#cabf9f (on dark)",
+          "#6a6052"
+        ]
+      },
+      "fonts": {
+        "display": "Cinzel",
+        "body": "Noto Serif JP",
+        "jp": "Shippori Mincho (headings), Noto Serif JP (body)"
+      },
+      "shape": {
+        "radius": "zero everywhere (core identity)",
+        "shadow": "gold-tinted only when active; no elevation ramp"
+      },
+      "imagery": "warm dark duotone (sepia/gold-brown) with multiply scrim; classical physical subjects (lion, laurel in stone)",
+      "intended_use": "heritage luxury brand landing page",
+      "note": "all-serif, no sans glyph anywhere; no blue/green/red"
+    },
+    {
+      "id": "c5ea434c-94e4-4a7a-af2c-bc64678b80e5",
+      "name": "veyra-chariot",
+      "status": "read",
+      "readme_lines": 264,
+      "mood": "design-explainer landing page; near-black navy under a single electric-blue accent; light-burst energy, glow on everything",
+      "background": "dark",
+      "palette": {
+        "primary": "#2882FF",
+        "accent": "#4FD8FF",
+        "accent_hue": "electric blue -> cyan (single hue family; gradient #1E68FF -> #33B5FF -> #5FE3FF)",
+        "backgrounds": [
+          "#05080F",
+          "#070C18",
+          "#0A1120",
+          "#0D1626"
+        ],
+        "text": [
+          "#EAF2FF",
+          "#CFD9EC",
+          "#A9B8D6",
+          "#6E809E"
+        ]
+      },
+      "fonts": {
+        "display": "Zen Kaku Gothic New 900/700",
+        "body": "Noto Sans JP 400",
+        "jp": "Zen Kaku Gothic New / Noto Sans JP; Inter for numerals and eyebrows"
+      },
+      "shape": {
+        "radius": "14-18px cards, 999px buttons, nothing square",
+        "shadow": "blue glows (light as shadow)"
+      },
+      "imagery": "AI-lit blue light-burst photography, cool high-contrast, no people, scrim-protected",
+      "intended_use": "tech / AI / SaaS-style landing page",
+      "note": "gradient-clipped white->light-blue headings; translucent gradient cards; no warm tone, no semantic status colours"
+    },
+    {
+      "id": "d02bdbb3-16bd-4ede-adb5-14feaacc5f8f",
+      "name": "veyra-lovers",
+      "status": "read",
+      "readme_lines": 114,
+      "mood": "dark cosmic-romantic marketing layout; calm, technical, faintly romantic; nebula/starfield backgrounds, glass cards, pink glow",
+      "background": "dark",
+      "palette": {
+        "primary": "#ff5fae",
+        "accent": "#ff5fae",
+        "accent_hue": "pink (single accent; deep #d6298a); blue #5b7cff only secondary in gradients",
+        "backgrounds": [
+          "#070611",
+          "#0c0a1b",
+          "#15122a",
+          "#1c1838"
+        ],
+        "text": [
+          "#f3eef8",
+          "#e7defa",
+          "#a89fc0"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond",
+        "body": "Noto Sans JP 300",
+        "jp": "Shippori Mincho (headings)"
+      },
+      "shape": {
+        "radius": "6-10px, pills 999px, step nodes 50%",
+        "shadow": "pink glow on interactive; deep black for elevation"
+      },
+      "imagery": "cosmic photography (nebula, bokeh, starfield, aurora, Milky Way) at low opacity with screen blend; cool violet/indigo/pink on black",
+      "intended_use": "romantic / cosmic / entertainment-style landing page",
+      "note": "glass cards with backdrop blur and pink underline; no white surfaces"
+    },
+    {
+      "id": "3a0ec05a-3199-4755-ae5a-05ee89b1dd1e",
+      "name": "veyra-hierophant",
+      "status": "read",
+      "readme_lines": 173,
+      "mood": "classical institutional; reads as law firm, private bank, art foundation; quietly proud, precise",
+      "background": "mixed",
+      "palette": {
+        "primary": "#16233f",
+        "accent": "#c4a35a",
+        "accent_hue": "antique gold (single accent, rationed; soft #d8c08a)",
+        "backgrounds": [
+          "#0e1830",
+          "#16233f",
+          "#1b2a4a",
+          "#f5f2ec",
+          "#efeae0",
+          "#ffffff"
+        ],
+        "text": [
+          "#1b2a4a",
+          "#5a6478"
+        ]
+      },
+      "fonts": {
+        "display": "Shippori Mincho 700/800",
+        "body": "Noto Sans JP 300-500",
+        "jp": "Shippori Mincho / Noto Sans JP; Cormorant Garamond for wordmark and eyebrows"
+      },
+      "shape": {
+        "radius": "2px buttons, 4px cards, 50% step dots",
+        "shadow": "single long low-opacity navy-tinted"
+      },
+      "imagery": "classical architecture at dusk (Ionic colonnade, vaulted arcade); warm limestone vs cool navy sky; navy overlay",
+      "intended_use": "institutional / premium professional services landing page",
+      "note": "cream + navy + gold; parchment texture at 5-6% over cream bands; no semantic colours; positive tracking everywhere"
+    },
+    {
+      "id": "5ff6dbaf-17c9-49b2-b105-aa7866fce50c",
+      "name": "veyra-emperor",
+      "status": "read",
+      "readme_lines": 116,
+      "mood": "Japanese luxury-services corporate site; mincho serif, single antique-gold accent, warm paper, lots of empty space; composed, formal, printed company profile",
+      "background": "light",
+      "palette": {
+        "primary": "#14120f",
+        "accent": "#b89b5e",
+        "accent_hue": "antique gold (single accent)",
+        "backgrounds": [
+          "#ffffff",
+          "#fbfaf7",
+          "#f5f2eb",
+          "#14120f (ink bands)"
+        ],
+        "text": [
+          "#14120f"
+        ]
+      },
+      "fonts": {
+        "display": "Shippori Mincho B1 (substituted)",
+        "body": "Noto Sans JP Light",
+        "jp": "Shippori Mincho B1 / Noto Sans JP; Cormorant Garamond for Latin"
+      },
+      "shape": {
+        "radius": "effectively square (0); pills only for step circles",
+        "shadow": "almost none; soft shadow only on open accordion"
+      },
+      "imagery": "none retrievable; intended cool low-contrast architectural; key visual under dark scrim",
+      "intended_use": "corporate luxury / professional services site",
+      "note": "values INFERRED from page text because stylesheet was not retrievable; fonts and Lucide icons substituted; crown icon is the brand glyph"
+    },
+    {
+      "id": "a5afbbd7-c040-4b32-a638-d910558cc8da",
+      "name": "veyra-empress",
+      "status": "read",
+      "readme_lines": 250,
+      "mood": "luxury hospitality landing (restaurant / lounge / private dining); restrained, curatorial, quietly technical; double-rule framed cards",
+      "background": "light",
+      "palette": {
+        "primary": "#B0883C",
+        "accent": "#C7A55E",
+        "accent_hue": "gold (single accent family) + wine #4E121A->#340A10 as the only inverse surface (footer)",
+        "backgrounds": [
+          "#FBF7F0",
+          "#F4EEE2",
+          "#FFFFFF",
+          "#4E121A (footer)"
+        ],
+        "text": [
+          "#3E3324",
+          "#6E6149",
+          "#F3E7D7 (on wine)"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 400/500",
+        "body": "Noto Serif JP Light 300",
+        "jp": "Shippori Mincho B1 (headings), Noto Serif JP (body)"
+      },
+      "shape": {
+        "radius": "2px cards, 3px gold button, circles for crest/step disc",
+        "shadow": "warm-ink and gold-tinted, 6 levels"
+      },
+      "imagery": "warm low-key wine-red and gold: draped fabric, pomegranate still life; no people",
+      "intended_use": "luxury hospitality / hotel-brochure landing page",
+      "note": "all serif, wide latin tracking; cards have a second inset hairline frame; Font Awesome 6.5.2"
+    },
+    {
+      "id": "49f56229-7be8-4218-be35-6e814380cf43",
+      "name": "veyra-priestess",
+      "status": "read",
+      "readme_lines": 321,
+      "mood": "spiritual sanctuary brand; nocturnal, ceremonial, reverent, architectural; violet-black night sky, single gold accent, sacred-geometry line art",
+      "background": "dark",
+      "palette": {
+        "primary": "#d8b878",
+        "accent": "#d8b878",
+        "accent_hue": "gold (single accent; soft #e7d3a6, deep #b08a4a)",
+        "backgrounds": [
+          "#0c0717",
+          "#150d24",
+          "#211238",
+          "#2a1b46"
+        ],
+        "text": [
+          "#f3ecdf",
+          "#c5b8d6",
+          "#9683b0"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 400 (never bold), EB Garamond",
+        "body": "Noto Serif JP 300/400/500",
+        "jp": "Noto Serif JP"
+      },
+      "shape": {
+        "radius": "14px panels, 4px photos, 40px pills, 50% circles",
+        "shadow": "gold glow, no grey drop shadow; one deep black lift for framed photo"
+      },
+      "imagery": "cool violet-blue astronomical / forest light (nebula, starfield, mystical forest), always dimmed; gold hairline sacred geometry (mandala, seal)",
+      "intended_use": "spiritual / ceremonial / wellness landing page",
+      "note": "translucent violet gradient cards with 1px border; double concentric ring icon circles; mandala rotates 90s; Font Awesome 6.5.1"
+    },
+    {
+      "id": "8175c3eb-5c71-49ca-b56c-8928d6082ffe",
+      "name": "veyra-magician",
+      "status": "read",
+      "readme_lines": 227,
+      "mood": "dark-only cosmic marketing layout; planetarium exhibit label; quiet, precise, slightly cosmic; glowing gradient headings, orbit rings",
+      "background": "dark",
+      "palette": {
+        "primary": "#34dfef",
+        "accent": "#34dfef",
+        "accent_hue": "three glow accents used as light never flat fill: cyan #34dfef, magenta #f45cc8, blue #4d7cff",
+        "backgrounds": [
+          "#02030a",
+          "#05060f",
+          "translucent card rgba(23,27,46,.55)"
+        ],
+        "text": [
+          "near-white ink ramp (#f4f6ff family)"
+        ]
+      },
+      "fonts": {
+        "display": "Jost 300 (substituted)",
+        "body": "Noto Sans JP (substituted)",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "14px cards, 8px inputs, 22px banners, 999px pills",
+        "shadow": "black depth + coloured glow; borders do the work of shadows"
+      },
+      "imagery": "no raster; blurred radial cosmic gradients; if added: cool dark high-contrast low-saturation astronomy",
+      "intended_use": "cosmic / tech / AI-style landing page",
+      "note": "tokens are RECONSTRUCTED (stylesheet not retrievable); Lucide icons substituted; CTA band gradient cyan->blue->magenta; card hover lifts 6px with cyan glow border"
+    },
+    {
+      "id": "25acb709-666a-4dc3-8a6d-6797fea36f23",
+      "name": "veyra-fool",
+      "status": "read",
+      "readme_lines": 273,
+      "mood": "dark cosmic marketing site; one idea executed without exception: near-black space, one cyan accent, and light; quiet studio annotating its own work",
+      "background": "dark",
+      "palette": {
+        "primary": "#3FD8F0",
+        "accent": "#3FD8F0",
+        "accent_hue": "cyan (single accent; bright #6EE8FF); blue #3B9DFF support tone only",
+        "backgrounds": [
+          "#04060f",
+          "#070b18",
+          "rgba(13,22,46,.9) gradient cards"
+        ],
+        "text": [
+          "three inks, cool near-white"
+        ]
+      },
+      "fonts": {
+        "display": "Orbitron 500-900 (latin display, labels, numerals, buttons)",
+        "body": "Zen Kaku Gothic New 400-900",
+        "jp": "Zen Kaku Gothic New"
+      },
+      "shape": {
+        "radius": "10-18px by element; 50% medallions",
+        "shadow": "cyan glows only (no neutral drop shadow)"
+      },
+      "imagery": "cool blue-cyan astrophotography (nebulae, aurora, milky way), radially masked so it dissolves into the page; drifting starfield",
+      "intended_use": "sci-fi / tech / AI landing page with contact form",
+      "note": "hand-authored inline SVG sparklines and ring gauges; Font Awesome 6.5.1; values verbatim from source; includes form vocabulary"
+    },
+    {
+      "id": "fc836992-9f88-43d7-aad0-8797004ef095",
+      "name": "veyra-boar",
+      "status": "read",
+      "readme_lines": 260,
+      "mood": "dark high-contrast motorsport-adjacent corporate brand; heavy-industry confidence; loud display layer, calm body layer; ultra-condensed black type, zero radius",
+      "background": "dark",
+      "palette": {
+        "primary": "#e8440a",
+        "accent": "#e8440a",
+        "accent_hue": "hot orange (single accent, rationed; hover #ff5a1f)",
+        "backgrounds": [
+          "#0a0a0a",
+          "#111111",
+          "#1a1a1a"
+        ],
+        "text": [
+          "#ffffff",
+          "#cccccc",
+          "#888888"
+        ]
+      },
+      "fonts": {
+        "display": "Barlow Condensed 900/700",
+        "body": "Barlow 400-600",
+        "jp": "falls through to OS Japanese face (no CJK webfont)"
+      },
+      "shape": {
+        "radius": "0 everywhere",
+        "shadow": "none on containers"
+      },
+      "imagery": "cool desaturated monumental mountains and urban architecture, hero at brightness .25 grayscale .6",
+      "intended_use": "corporate / strategy / industrial services landing page",
+      "note": "nine-value palette; orange <5% coverage except one inverted CTA banner; English uppercase display copy with terminal periods"
+    },
+    {
+      "id": "2404f537-00f1-4108-9d3b-b99163af60b8",
+      "name": "veyra-dog",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese B2B AI product (autonomous agent); loyalty and reliability; corporate, calm, slightly formal; enterprise trust, quiet, dense, evidence-led",
+      "background": "mixed",
+      "palette": {
+        "primary": "#E8A020",
+        "accent": "#E8A020",
+        "accent_hue": "gold/amber (single accent; hover #F5B84A, press #C07010)",
+        "backgrounds": [
+          "#0A0E1A",
+          "#0F1626",
+          "#151D30",
+          "#FFFFFF",
+          "#F5F5F5"
+        ],
+        "text": [
+          "#1A1A2E (ink on light)",
+          "white alphas on navy",
+          "#555/#666 greys"
+        ]
+      },
+      "fonts": {
+        "display": "system stack: Helvetica Neue, Arial, Hiragino Kaku Gothic ProN, Meiryo (800 headings)",
+        "body": "same system stack, 400",
+        "jp": "OS Japanese face (no webfont)"
+      },
+      "shape": {
+        "radius": "4px buttons, 6px FAQ, 8px cards, 50% badges",
+        "shadow": "none except one 6px gold ring on flow badges"
+      },
+      "imagery": "cool dark abstract network filament behind type; warm bright desk photo framed with sepia nudge",
+      "intended_use": "enterprise B2B AI product landing page (hero, trust, features, KPIs, adoption flow, FAQ)",
+      "note": "alternates dark and light full-bleed bands; KPI dial rings; Font Awesome 6.5.0"
+    },
+    {
+      "id": "121e865d-5706-4df4-a444-877dd92c97b0",
+      "name": "veyra-rooster",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese single-page corporate/consulting site; institutional confidence at dawn; dark, wide, quiet, slightly cinematic",
+      "background": "mixed",
+      "palette": {
+        "primary": "#E05A1A",
+        "accent": "#E05A1A",
+        "accent_hue": "orange (only saturated colour; hover #F0723A)",
+        "backgrounds": [
+          "#0D1B2A",
+          "#12243A",
+          "#172B40",
+          "#f9f7f5",
+          "#ffffff"
+        ],
+        "text": [
+          "#1a1a1a",
+          "#555",
+          "white alphas on navy"
+        ]
+      },
+      "fonts": {
+        "display": "system stack weight 900",
+        "body": "system stack 400",
+        "jp": "Hiragino / Meiryo (no webfonts)"
+      },
+      "shape": {
+        "radius": "4px buttons, 6px cards, 8px icon frames",
+        "shadow": "exactly one: orange-tinted on service-card hover"
+      },
+      "imagery": "darkened photography: Earth from orbit at dawn, night city, dawn mountains; cool blue-black with a single warm horizon",
+      "intended_use": "consulting / corporate services landing page",
+      "note": "no backdrop blur anywhere; no scroll reveal; warm-tinted neutrals"
+    },
+    {
+      "id": "e4b9ee37-81b4-4343-8025-c8e36d248c3b",
+      "name": "veyra-monkey",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "digital consultancy 'Intelligence in Motion.'; instrument panel not brochure; precise, cool, slightly clinical; dark space aesthetic, square corners, hairlines instead of shadows",
+      "background": "dark",
+      "palette": {
+        "primary": "#1a6dff",
+        "accent": "#1a6dff",
+        "accent_hue": "saturated blue (single chromatic colour; hover #3d84ff, press #0f57d8)",
+        "backgrounds": [
+          "#050a12",
+          "#0a1020",
+          "#0d1525"
+        ],
+        "text": [
+          "white at 100/62/42/24% opacity"
+        ]
+      },
+      "fonts": {
+        "display": "Archivo extra-bold (substituted), tight negative tracking",
+        "body": "Barlow 14px/1.8 (substituted)",
+        "jp": "fallback"
+      },
+      "shape": {
+        "radius": "0 everywhere; 48px circular process node",
+        "shadow": "none; blue glow only on emphasis"
+      },
+      "imagery": "cool blue cosmic / particle fields, never raw: grayscale+dim, hue-rotate to brand blue, or dimmed with contrast",
+      "intended_use": "tech / digital consultancy landing page",
+      "note": "2px 'slit' between service cards; the period in display statements is tinted blue; Font Awesome 6.5.2"
+    },
+    {
+      "id": "e1e755f6-0cb0-4ec0-97ee-e46e817078c9",
+      "name": "veyra-goat",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "dark gold-accented Japanese corporate landing; institutional, calm; squared-off hairline cards; mountain photography under scrims; dark/bone alternating bands",
+      "background": "mixed",
+      "palette": {
+        "primary": "#c4a254",
+        "accent": "#c4a254",
+        "accent_hue": "gold (single accent; no secondary or semantic hues)",
+        "backgrounds": [
+          "#0a0a0b",
+          "#f4f2ed (bone)"
+        ],
+        "text": [
+          "white alphas 72%/48% on dark",
+          "opaque on bone"
+        ]
+      },
+      "fonts": {
+        "display": "Shippori Mincho B1 (substituted)",
+        "body": "IBM Plex Sans JP 300-700 (substituted)",
+        "jp": "Shippori Mincho B1 / IBM Plex Sans JP"
+      },
+      "shape": {
+        "radius": "2px (core to brand)",
+        "shadow": "hairlines over shadows; shadow only on bone sections and card hover"
+      },
+      "imagery": "cool desaturated high-altitude mountain photography behind gradient scrims (none supplied; placeholder)",
+      "intended_use": "corporate landing page (hero, proof bar, mission, features, process, reasons, voice, FAQ, CTA)",
+      "note": "numbers always carry unit and basis; values RECONSTRUCTED (CSS not retrievable); Lucide icons substituted; no chips/badges"
+    },
+    {
+      "id": "3112aff8-7bb3-41b0-b53b-dd0f3a1ac4f4",
+      "name": "veyra-horse",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "dark cinematic luxury-editorial corporate landing for a consultancy ('Unstoppable Momentum'); tracked uppercase Latin labels over heavy Japanese headlines; no cards, no shadows",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a84c",
+        "accent": "#c9a84c",
+        "accent_hue": "gold (single chromatic colour; dim #8a6d2e, light #e8c96a)",
+        "backgrounds": [
+          "#0a0a08",
+          "#111109",
+          "#161410"
+        ],
+        "text": [
+          "#f5f0e8",
+          "#9e9890",
+          "#6b6560"
+        ]
+      },
+      "fonts": {
+        "display": "Bebas Neue (wordmark, numerals, watermark only)",
+        "body": "Noto Sans JP 300/700",
+        "jp": "Noto Sans JP; Montserrat for uppercase Latin labels; Cormorant Garamond once"
+      },
+      "shape": {
+        "radius": "0 (except 72px circular process icon)",
+        "shadow": "none; one text glow behind hero wordmark"
+      },
+      "imagery": "full-bleed sepia horse photography with brightness down + sepia up formula; warm, dark, monochrome",
+      "intended_use": "consultancy / corporate brand landing page",
+      "note": "hover lightens, never darkens; tracking increases as size decreases"
+    },
+    {
+      "id": "e8d78ad2-2ca6-461f-aba8-becac387aaad",
+      "name": "veyra-snake",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "dark near-monochrome green corporate landing page; composed, technical, quietly premium; vertical Japanese headline in the concept band",
+      "background": "dark",
+      "palette": {
+        "primary": "#00e5a0",
+        "accent": "#00e5a0",
+        "accent_hue": "mint / emerald green (single accent; dim #00b87a)",
+        "backgrounds": [
+          "#050d0a",
+          "#060e0a",
+          "#070f0b",
+          "#0a1510",
+          "#0d1a14"
+        ],
+        "text": [
+          "#e8f5f0",
+          "#8aaa98",
+          "#7a9a8a"
+        ]
+      },
+      "fonts": {
+        "display": "Bebas Neue (English headings and numbers)",
+        "body": "Inter 15px",
+        "jp": "Noto Sans JP 300; Cormorant Garamond 600 for wordmark only"
+      },
+      "shape": {
+        "radius": "near-square: 4px cards, 2px buttons",
+        "shadow": "none; accent-green glows only"
+      },
+      "imagery": "one misted landscape hue-rotated into brand green (hue-rotate 130deg) and dimmed",
+      "intended_use": "consulting / build studio corporate landing page",
+      "note": "EN uppercase heading always paired with JP subtitle; 200px label / content grid; Font Awesome 6.5.0"
+    },
+    {
+      "id": "c89babbb-c5ca-488f-a767-e5ea1062d0f9",
+      "name": "veyra-dragon",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "dark editorial bilingual (EN structure / JA body) corporate marketing landing; grand but unadorned; mythic English headlines",
+      "background": "dark",
+      "palette": {
+        "primary": "#c0392b",
+        "accent": "#c0392b",
+        "accent_hue": "two accents: action red #c0392b (hover #e74c3c) + identity gold #c9a84c (hover #e6c96a); never large fills",
+        "backgrounds": [
+          "#0a0a0a",
+          "#111111",
+          "#141414",
+          "#181818",
+          "#1e1e1e"
+        ],
+        "text": [
+          "#ffffff",
+          "#e0e0e0",
+          "#999/#888/#777"
+        ]
+      },
+      "fonts": {
+        "display": "Montserrat 600-900, tracked",
+        "body": "Noto Sans JP 300-500, line-height 1.7-1.9",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "almost square 2-4px; circles for logo orb, icon disc, step node",
+        "shadow": "none; hairlines and value steps"
+      },
+      "imagery": "warm, high-contrast, heavily darkened photography (brightness .45, saturation pushed); fixed-attachment parallax stat band",
+      "intended_use": "corporate / consulting marketing landing page",
+      "note": "2px hairline gutters between cards; Font Awesome 6.5.0; logo = dragon glyph in gold-red orb"
+    },
+    {
+      "id": "94aa6ed3-10e1-4e43-8b28-a0a9aed4bca4",
+      "name": "veyra-rabbit",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "dark high-contrast identity for a Japanese digital consultancy; confident, forward-leaning, slightly cold; momentum vocabulary; one accent colour, no rounded corners, no drop shadows",
+      "background": "dark",
+      "palette": {
+        "primary": "#3fffc8",
+        "accent": "#3fffc8",
+        "accent_hue": "electric teal (single hue; dim #2dd4a4)",
+        "backgrounds": [
+          "#04090f",
+          "#071320",
+          "#0b1c2e"
+        ],
+        "text": [
+          "#e4f0f8",
+          "#7a9cb0"
+        ]
+      },
+      "fonts": {
+        "display": "system stack Helvetica Neue/Arial, weights 800/900",
+        "body": "same system stack",
+        "jp": "OS Japanese face (no webfont)"
+      },
+      "shape": {
+        "radius": "0 or 50% only",
+        "shadow": "none; teal halo used twice"
+      },
+      "imagery": "cold cosmic nebula hero (screen blend) and warm golden-hour misty hills",
+      "intended_use": "digital consultancy / technology services landing page",
+      "note": "2px gutters between cards and FAQ rows; hero headline 'Leap Beyond. Grow Exponentially.' with teal words; emphasis by colour not weight"
+    },
+    {
+      "id": "166da50d-0dda-4441-83f0-27399a8eca05",
+      "name": "veyra-tiger",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "creative-agency brand; a black stage, gold as the only colour, photography that stays quiet until touched; restrained luxury, printed-brand-book feel",
+      "background": "dark",
+      "palette": {
+        "primary": "#C9A84C",
+        "accent": "#C9A84C",
+        "accent_hue": "gold (only chromatic value; hover #E8C96B, pressed #A07830)",
+        "backgrounds": [
+          "#0A0A0A",
+          "#111111",
+          "#1A1A1A",
+          "#222222"
+        ],
+        "text": [
+          "white at 75/60/55/50/45/40/25% alpha"
+        ]
+      },
+      "fonts": {
+        "display": "Playfair Display 900/700",
+        "body": "Montserrat 300 (never above 16px)",
+        "jp": "OS gothic fallback (no Japanese webfont)"
+      },
+      "shape": {
+        "radius": "0 (only two small circles)",
+        "shadow": "none (one text-shadow on hero headline)"
+      },
+      "imagery": "warm low-key high-contrast desaturated photography (tigers, architecture, automotive, fitness); grayscale graded by role, restores on hover",
+      "intended_use": "creative agency / premium services corporate site",
+      "note": "checkerboard 2x4 services grid; 2px hairline gutters; hover = colour inversion not motion; no light mode"
+    },
+    {
+      "id": "0b6c673d-dc01-42c1-bd15-170baa99b07a",
+      "name": "veyra-ox",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese corporate-site brand; luxury, heritage-leaning, 'annual report cover' feel; tagline 'Unwavering Force.'; dark near-black grounds with warm cream counter-sections",
+      "background": "mixed",
+      "palette": {
+        "primary": "#C8A96E",
+        "accent": "#C8A96E",
+        "accent_hue": "gold (single accent; light #E2C98A, dark #A07840 on cream)",
+        "backgrounds": [
+          "#0A0A0A",
+          "#111111",
+          "#1A1612",
+          "#1E1A14",
+          "#F2EDE4 (cream)",
+          "#EAE4D8 (cream2)"
+        ],
+        "text": [
+          "#F2EDE4 on dark",
+          "dark on cream"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300/500 (all numerals)",
+        "body": "Montserrat 0.72-0.78rem, line-height 1.9",
+        "jp": "Noto Serif JP (headings), Montserrat (labels/body)"
+      },
+      "shape": {
+        "radius": "0 everywhere (one 12px timeline dot)",
+        "shadow": "none anywhere"
+      },
+      "imagery": "warm earthen photography (mountains, hands at work, fields at golden hour), attenuated opacity, sepia 20% on archive thumbs",
+      "intended_use": "heritage corporate site (hero, intro, services, history timeline, results, process, FAQ, contact)",
+      "note": "2px gutter card grids; hover = border to solid gold; bilingual EN signage / JP body"
+    },
+    {
+      "id": "d6987f77-2f03-4945-8e71-0266da8e2430",
+      "name": "veyra-rat",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese corporate/service marketing site; infrastructural and understated; 'THE INTELLIGENT NETWORK'; near-black with a single yellow",
+      "background": "dark",
+      "palette": {
+        "primary": "#e8d800",
+        "accent": "#e8d800",
+        "accent_hue": "yellow (single chromatic colour; rationed)",
+        "backgrounds": [
+          "#0a0a0a",
+          "#111111",
+          "#1a1a1a",
+          "#222222"
+        ],
+        "text": [
+          "white at 100/70/65/60/55/50/40% (hierarchy by opacity)",
+          "#999999",
+          "#666666"
+        ]
+      },
+      "fonts": {
+        "display": "Bebas Neue (hero up to 130px, stats, logotype)",
+        "body": "Inter 300-600 (Montserrat fallback)",
+        "jp": "Inter 700 for Japanese headings"
+      },
+      "shape": {
+        "radius": "0 (36px process markers and 110px donut round)",
+        "shadow": "none anywhere"
+      },
+      "imagery": "cool dark technical: night landscapes threaded with light, macro cabling, network/mesh textures",
+      "intended_use": "technology / infrastructure corporate marketing landing page",
+      "note": "hover = element adopts yellow; donut chart in SVG; 2px card grid gutters; Font Awesome 6.5.0"
+    },
+    {
+      "id": "8be86471-3649-431f-8de0-107b82314e82",
+      "name": "veliora-block",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese B2B technology/consulting; austere, industrial, architectural; dark hero over muted mid-gray page; sharp-edged grid with visible 3px 'grout' seams",
+      "background": "mixed",
+      "palette": {
+        "primary": "#0d0d0d",
+        "accent": null,
+        "accent_hue": "none - purely achromatic (white on dark, near-black on light)",
+        "backgrounds": [
+          "#d0d0d0",
+          "#c8c8c8",
+          "#d8d8d8",
+          "#0d0d0d",
+          "#1a1a1a",
+          "#252525",
+          "#2e2e2e"
+        ],
+        "text": [
+          "#1a1a1a",
+          "#444",
+          "#555",
+          "white alphas on dark"
+        ]
+      },
+      "fonts": {
+        "display": "Oswald 700",
+        "body": "Barlow 300-500",
+        "jp": "Barlow Condensed 600-700 for headings/labels"
+      },
+      "shape": {
+        "radius": "0 (50% only on process icon circles)",
+        "shadow": "one: floating CTA badge"
+      },
+      "imagery": "all grayscale or heavily desaturated: industrial interiors, glass architecture, dark code environments; editorial cinematic",
+      "intended_use": "B2B technology / consulting landing page",
+      "note": "floating wireframe cubes animation in hero; ALL CAPS tracked labels; two-digit section badges; Font Awesome 6.5"
+    },
+    {
+      "id": "d726d618-c56b-4765-8b07-c7d2ed2de0d8",
+      "name": "veyra-aquarius",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "creative-technology studio (data, design, engineering); 'INTELLIGENCE IN MOTION / Flow. Think. Evolve.'; composed, technical, slightly cold; display serif 110px against 9px tracked sans labels",
+      "background": "dark",
+      "palette": {
+        "primary": "#1a5fff",
+        "accent": "#00d4ff",
+        "accent_hue": "cyan #00d4ff (only accent, rationed) over blues #1a5fff/#2979ff",
+        "backgrounds": [
+          "#020714",
+          "#050d1e",
+          "#071428",
+          "#060e1f"
+        ],
+        "text": [
+          "white at 100/70/40/15% opacity (no grey hex)"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300 (headlines and big numerals)",
+        "body": "DM Sans 300 (body, Japanese prose)",
+        "jp": "platform sans-serif fallthrough; Space Grotesk 400-600 for labels"
+      },
+      "shape": {
+        "radius": "0 (only dots and 48px social circles round)",
+        "shadow": "none; cyan glow on active dots"
+      },
+      "imagery": "nine abstract renders: deep navy grounds, cyan and cobalt volumetric light - data streams, waves, crystal cube, nebula, neural network, orb; graded with CSS filters",
+      "intended_use": "data visualization / creative technology / AI-style studio landing page",
+      "note": "real logo.svg (nested hexagons) exists; works grid; history timeline; hover widens gap between label and arrow; fadeUp stagger"
+    },
+    {
+      "id": "5d8029a7-33e4-4c5c-bfbf-ac7ddc97ac7d",
+      "name": "veyra-sagittarius",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "dark gold-accented Japanese corporate brand built on one idea: a night sky; composed, aspirational, slightly cosmic ('Beyond the Horizon.')",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a227",
+        "accent": "#c9a227",
+        "accent_hue": "gold (single accent; dim #8a6d1a, light #e8c454)",
+        "backgrounds": [
+          "#050d1f",
+          "#0a1530",
+          "#0d1e3a"
+        ],
+        "text": [
+          "#ffffff",
+          "#c8d8ec",
+          "#8fa5c8"
+        ]
+      },
+      "fonts": {
+        "display": "Playfair Display 900 (hero headline only)",
+        "body": "Noto Sans JP 300/700",
+        "jp": "Noto Sans JP; Rajdhani 500-700 for wordmark, eyebrows, numerals"
+      },
+      "shape": {
+        "radius": "2-4px; 50% process node",
+        "shadow": "none (one text-shadow on hero)"
+      },
+      "imagery": "starfields and silhouetted mountains, cool dark deep-toned; inline-SVG constellation overlay; gold star-streak",
+      "intended_use": "corporate marketing site (hero, vision, service, process, flow, FAQ, contact)",
+      "note": "translucent navy cards with gold hairline; hero slow zoom; a warm or bright image would break the system"
+    },
+    {
+      "id": "f3c65022-befc-44ac-bdcf-a7bfa572f2ab",
+      "name": "veyra-scorpio",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese creative consultancy (brand strategy, visual design, digital security); occult-adjacent luxury; near-black page, one crimson accent, wide-tracked serif capitals; 'SEE BEYOND. CREATE FOREVER.'",
+      "background": "dark",
+      "palette": {
+        "primary": "#c0392b",
+        "accent": "#c0392b",
+        "accent_hue": "crimson (single accent; live dot #e74c3c, scrollbar #922b21); gold #c9a96e declared but unused",
+        "backgrounds": [
+          "#050508",
+          "#08080f",
+          "#0d0d1a"
+        ],
+        "text": [
+          "#f0ede8 at 100/55/35/20%"
+        ]
+      },
+      "fonts": {
+        "display": "Cinzel 400-600 (titles, wordmark)",
+        "body": "Noto Sans JP 300, leading 1.9-2.1",
+        "jp": "Cormorant Garamond for lyric Japanese headings and KPI numerals; Rajdhani for micro-labels"
+      },
+      "shape": {
+        "radius": "0 (2px chart frame, 50% discs)",
+        "shadow": "none; crimson bloom only"
+      },
+      "imagery": "volcanic coastline, crimson mineral, night sky crushed to ~25-60% brightness; fixed film-grain noise overlay; drifting particle constellation; rotating ornament dial",
+      "intended_use": "luxury creative-agency / security-flavoured landing page",
+      "note": "fa-scorpion glyph absent in FA Free; scorpion SVG logo mark exists; contact FAB is the only button"
+    },
+    {
+      "id": "906466f4-fa79-483e-84ca-7eb4a095b6f3",
+      "name": "veyra-capricorn",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "dark gold-accented corporate identity for a Japanese strategy/technology consultancy; restrained, cold, expensive; alpine metaphor 'Peak of Ambition. Grounded in Reality.'",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a96e",
+        "accent": "#c9a96e",
+        "accent_hue": "gold (single accent; light #e8d5a3, deep #8b6914)",
+        "backgrounds": [
+          "#0a0a0a",
+          "#111111",
+          "#181818",
+          "#222222"
+        ],
+        "text": [
+          "#f5f0e8",
+          "#d9d3c8",
+          "#888880"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300 (hero, wordmark, numerals)",
+        "body": "Jost 300",
+        "jp": "Noto Serif JP 300 (headings, step titles)"
+      },
+      "shape": {
+        "radius": "0 everywhere (10px timeline dot)",
+        "shadow": "none at all; gold-tinted hairlines"
+      },
+      "imagery": "four cold alpine landscapes, heavily suppressed (brightness .35); SVG gold mesh over hero; slow zoom",
+      "intended_use": "consulting / technology services corporate landing page",
+      "note": "universal hover = gold inversion (border becomes fill); Font Awesome self-hosted; no bold anywhere"
+    },
+    {
+      "id": "5bded36d-2934-405a-bbd4-9be3ebfb1926",
+      "name": "veyra-virgo",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese corporate consulting site; deliberately austere; achromatic end to end; hierarchy by weight, size, leading and hairlines; spec-document tone",
+      "background": "mixed",
+      "palette": {
+        "primary": "#2c2c2c",
+        "accent": null,
+        "accent_hue": "none - achromatic (#0e1015 to #ffffff); only saturated pixels are inside two photographs",
+        "backgrounds": [
+          "#0e1015",
+          "#1a1c22",
+          "#ffffff",
+          "#fafafa",
+          "#f7f7f7",
+          "#f4f4f4"
+        ],
+        "text": [
+          "#2c2c2c",
+          "#333333",
+          "#666/#999/#ccc ramp",
+          "white alphas on dark"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 500 (wordmark only)",
+        "body": "Noto Sans JP 12-14px, line-height 2.0",
+        "jp": "Noto Sans JP Bold headings; Montserrat for Latin labels and numerals (Light 300 at large sizes)"
+      },
+      "shape": {
+        "radius": "0; 2px form fields; 20px nav pill; 50% icon circles",
+        "shadow": "zero box-shadows; no backdrop blur"
+      },
+      "imagery": "two photographs: navy-graded hero, About photo grayscale 30% contrast 1.05; cool midnight navy and architectural grey",
+      "intended_use": "corporate consulting landing page (about, why, 6 services, results, process, FAQ, contact)",
+      "note": "full-bleed sections without a page container; 1px-gap hairline service grid; three greyscale inline micro-charts"
+    },
+    {
+      "id": "4be24d3a-d3af-457c-af3c-48625b322d03",
+      "name": "veyra-leo",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese premium business-solutions consultancy; restrained luxury with a sports-brand undertone; lion portrait dissolving into gold constellation lines; 'The Pride of Innovation.'",
+      "background": "dark",
+      "palette": {
+        "primary": "#C9A84C",
+        "accent": "#C9A84C",
+        "accent_hue": "gold (single accent; light #E2C47A, dark #9A7A2E); every border/fill is gold at an opacity",
+        "backgrounds": [
+          "#08080A",
+          "#0E0D0B",
+          "#141210"
+        ],
+        "text": [
+          "#F5F0E8",
+          "#C0B8AC",
+          "#8A847A"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300 up to 7rem",
+        "body": "Noto Serif JP 300, 0.78rem, line-height 2.0-2.2",
+        "jp": "Noto Serif JP; Montserrat uppercase micro-labels at 0.58-0.65rem"
+      },
+      "shape": {
+        "radius": "0 (16px dots, half-disc contact tab)",
+        "shadow": "none anywhere; no backdrop blur"
+      },
+      "imagery": "lion, mountains at golden hour, brushed gold texture, gold particle wave - always filtered dark and warm; animated gold constellation canvas (120 stars)",
+      "intended_use": "premium consultancy landing page; every band is a full-bleed 50/50 split",
+      "note": "hamburger-only navigation at all widths; giant outlined LION watermark behind stats; hover lightens toward gold"
+    },
+    {
+      "id": "e37067fd-b538-411c-984c-750c0b71e5ed",
+      "name": "veyra-cancer",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "dark deep-sea / astronomical corporate landing page; quiet, technical, expensive; serif-only UI; nebula washes and a canvas starfield",
+      "background": "dark",
+      "palette": {
+        "primary": "#3b82f6",
+        "accent": "#60a5fa",
+        "accent_hue": "blue system colour (#3b82f6, bright #60a5fa) + violet #8b5cf6 only in nebula, CTA band and gradient ends",
+        "backgrounds": [
+          "#020810",
+          "#060e20",
+          "rgba(8,20,52,.9) cards"
+        ],
+        "text": [
+          "#ffffff",
+          "#e2e8f0",
+          "#94a3b8 (all long-form body)"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond (wordmark italic 300, numerals)",
+        "body": "Noto Serif JP 300-700 (everything else; no sans-serif anywhere)",
+        "jp": "Noto Serif JP"
+      },
+      "shape": {
+        "radius": "0 ghost button, 3px photos, 8px cards, 60px pill CTA",
+        "shadow": "none black; coloured light glows (blue 18%, violet around CTA)"
+      },
+      "imagery": "cool blue-grey misty low-contrast: hills, dark circuitry, diffused light, water ripple; suppressed; warm or bright images would break it",
+      "intended_use": "corporate / technology services landing page",
+      "note": "double-ringed glowing IconOrb; sticky service rail; 29 components; the cancer glyph is the one Unicode artwork"
+    },
+    {
+      "id": "4d466e1c-bb67-4849-8ce5-edd334e14db1",
+      "name": "veyra-gemini",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "dark cinematic bilingual brand for a digital consultancy, 'Twin Perspectives, One Vision' (logic and creative agility); a control room at 3am; deep-navy space with electric cyan-teal light",
+      "background": "dark",
+      "palette": {
+        "primary": "#00fbff",
+        "accent": "#00fbff",
+        "accent_hue": "electric cyan-teal (single accent; used small - rules, icons, numbers, borders)",
+        "backgrounds": [
+          "#080c18",
+          "#0a0e1a",
+          "#050810"
+        ],
+        "text": [
+          "#f0f4ff",
+          "#c0c0c0 silver body at alpha steps"
+        ]
+      },
+      "fonts": {
+        "display": "Playfair Display 700 (headings, big numbers; italic for accented fragment)",
+        "body": "Inter 300/400/600/700 (body weight 300)",
+        "jp": "Noto Sans JP 300/400/700 stacked behind Inter"
+      },
+      "shape": {
+        "radius": "0 (circles for dots/social; 2px chart bar caps)",
+        "shadow": "none - glows only (box/text/drop-shadow 0 0 Npx)"
+      },
+      "imagery": "cool nocturnal abstract (data lattices, fluid abstractions, aerial networks) filtered dark and hue-rotated into teal; 220-particle canvas hero",
+      "intended_use": "digital consultancy / AI-technology landing page (8 numbered sections, dot navigator)",
+      "note": "glass cards with blur(8px); glowing 1px rules; workflow steps DISCOVER DEFINE DESIGN DEVELOP DELIVER; branded 4px scrollbar; no logo file"
+    },
+    {
+      "id": "ffbc7dcc-7997-4ab0-8958-7a9d30201769",
+      "name": "veyra-taurus",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "luxury brand landing page; restrained, material, unhurried; dark olive panels alternating with warm cream inversions; macro photographs of natural materials",
+      "background": "mixed",
+      "palette": {
+        "primary": "#c9a96e",
+        "accent": "#c9a96e",
+        "accent_hue": "gold (single accent; light #d4b87a, dark #a8883a on cream)",
+        "backgrounds": [
+          "#0a0a06",
+          "#252518",
+          "#f2ece0 (cream)",
+          "#e8e0d0"
+        ],
+        "text": [
+          "white/cream on dark",
+          "dark on cream"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300/400",
+        "body": "Raleway 200-600, 0.84rem line-height 2",
+        "jp": "Noto Serif JP fallback in both stacks"
+      },
+      "shape": {
+        "radius": "0 (54px process ring and 44px back-to-top round)",
+        "shadow": "almost none: gold glows on ring/dot, shadow under scrolled header"
+      },
+      "imagery": "warm dark low-key macro shots: volcanic stone, woven linen, oxidised iron, walnut, leather; plus misty mountains and sunlit forest",
+      "intended_use": "luxury brand / craft / premium services landing page",
+      "note": "no gradients as backgrounds; card hover lifts 4px with solid gold border; gold diamond pulse; Font Awesome 6.5.0"
+    },
+    {
+      "id": "dd8df970-a86d-4ce0-99d7-f10d89509352",
+      "name": "veyra-aries",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "dark cinematic crimson-accented single-page Japanese corporate/agency site; slightly severe, premium consulting-or-design-studio register; 'Break the Boundary.'",
+      "background": "dark",
+      "palette": {
+        "primary": "#c0111f",
+        "accent": "#e8182b",
+        "accent_hue": "crimson (single hue; #c0111f buttons, #e8182b icons/active, #e63040 active year); ~3% of surface",
+        "backgrounds": [
+          "#0a0a0a",
+          "#111111",
+          "#1a1a1a",
+          "#161616"
+        ],
+        "text": [
+          "white at 0.75/0.6/0.5/0.45/0.4/0.25 alpha (never solid grey)"
+        ]
+      },
+      "fonts": {
+        "display": "Playfair Display 900 (two English 'moment' headlines only)",
+        "body": "Barlow 300-600",
+        "jp": "OS Japanese face (no webfont); Barlow Condensed 700 for H2, card titles, stats, wordmark"
+      },
+      "shape": {
+        "radius": "0 everywhere (circles for dots/ring only)",
+        "shadow": "none; three glows only; no backdrop blur anywhere"
+      },
+      "imagery": "four full-bleed dark photos (cosmic ember, monochrome mountain range, alpine cliff, deep space) filtered brightness .25-.45 with radial/linear veils; giant ARIES watermark",
+      "intended_use": "consulting / agency landing page with asymmetric 1fr/2fr splits and hairline card grids",
+      "note": "no scroll reveal; FAQ question gets dimmer on hover; red trend arrows on every KPI; Font Awesome self-hosted"
+    },
+    {
+      "id": "fe4e6b06-6c82-4f79-a79c-89361f3a9d8d",
+      "name": "veliora-elite",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "luxury services brand (bespoke work, discretion, proven track record); composed and slightly distant; 'Exclusivity in Every Detail.'; full-viewport film-grain overlay",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a84c",
+        "accent": "#c9a84c",
+        "accent_hue": "gold (one hue; light #e2c47a, dim #9b7d38) at eleven fixed alphas",
+        "backgrounds": [
+          "#0a0908",
+          "#111010",
+          "#161514",
+          "#1a1918",
+          "#1c1b19"
+        ],
+        "text": [
+          "#f0ead8 parchment",
+          "#9e9585 stone"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300/400",
+        "body": "Lato 300",
+        "jp": "none declared (system fallback); Cinzel 500/600 for wordmark and numerals only"
+      },
+      "shape": {
+        "radius": "0 on every element",
+        "shadow": "none; gold drop-shadow glow on ring and stat numerals"
+      },
+      "imagery": "cinematic cool-to-neutral landscapes and materials (dark corridor, misty mountains, forest, lake, dunes, coast, dark wood, obsidian marble), brightness .22-.7",
+      "intended_use": "luxury services / premium professional landing page",
+      "note": "hairline-shared card grid; fixed SVG grain overlay at z-index 9999; hero ken-burns 18s; Font Awesome 6.5.0"
+    },
+    {
+      "id": "76c20700-c5df-4997-be77-1d626160ac98",
+      "name": "veliora-glow",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "dark gold-lit luxury design studio, 'light defines value' (光が、価値を定義する); nearly black page where every decision is about where light falls; no navigation bar",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a254",
+        "accent": "#c9a254",
+        "accent_hue": "gold (three golds: #c9a254, light #e8c97a, pale #f0dfa0); every tint is gold at 3-35% alpha; no greys",
+        "backgrounds": [
+          "#080808",
+          "#0e0d0b",
+          "#141210",
+          "#111009"
+        ],
+        "text": [
+          "#ffffff",
+          "#e8dfc8 warm bone",
+          "#a89070 muted bronze"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300/400 (up to 7.5rem stat numerals)",
+        "body": "Noto Serif JP weight 200-300",
+        "jp": "Noto Serif JP; Cinzel uppercase micro-labels"
+      },
+      "shape": {
+        "radius": "0 (60px icon frame and 16px timeline dot round)",
+        "shadow": "none neutral; gold glows only"
+      },
+      "imagery": "warm dark near-monochrome: obsidian interiors, crystal prism, corridor, liquid metal, gold-threaded silk, veined marble, starfield, amber night city; crushed to brightness .12-.55; 120 gold motes particle canvas",
+      "intended_use": "premium design-studio landing page (free Chart Design template)",
+      "note": "body copy hand-broken into exactly three lines; dividers fade to transparent at both ends; one CTA only; logo = CSS rotated square mark"
+    },
+    {
+      "id": "d04409ce-e2f2-40c1-8110-29064f039f6d",
+      "name": "veliora-aura",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "fictional Japanese luxury creative atelier; fragrance-house / editorial-fashion feel; nocturnal, smoke-and-gold, unhurried; 'Excellence in Elegance.'",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a96e",
+        "accent": "#c9a96e",
+        "accent_hue": "gold (hairlines, hover tints, logo word; light #e0c898) with cool indigo/violet only as low-opacity radial glows under content",
+        "backgrounds": [
+          "#0a0a0c",
+          "#1a1a1f"
+        ],
+        "text": [
+          "warm ivory #f0eee8 family"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond (light weights) for headings, nav, buttons",
+        "body": "EB Garamond italic (all body copy italic)",
+        "jp": "Noto Serif JP weight 200, only for the Japanese hero headline"
+      },
+      "shape": {
+        "radius": "0",
+        "shadow": "none anywhere; blur(18px) only on fixed header"
+      },
+      "imagery": "cool desaturated smoke/mist photography, navy urban night bokeh; one amber lantern counterpoint; fixed SVG film grain at ~4%",
+      "intended_use": "luxury creative atelier / fashion-studio landing page",
+      "note": "no sans-serif anywhere; one entrance animation (fade-up); service tiles have no visible container; single CTA"
+    },
+    {
+      "id": "0c99a2fa-d447-48c4-9651-5161db809d88",
+      "name": "veliora-nova",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "luxury web-design template brand; high-end print magazine, quiet, assured, cinematic; evokes luxury fashion, fine horology, avant-garde technology; three sub-lines Minimal Luxe / Tech Nova / Artistic Flow; 'The New Standard of Elegance.'",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a050",
+        "accent": "#c9a050",
+        "accent_hue": "gold (base #c9a050, light #e8c06a, pale #f5d98a, dim #8a6c28); no cool grays, no blues",
+        "backgrounds": [
+          "#080808",
+          "#0e0e0e",
+          "#141414",
+          "#1a1a1a"
+        ],
+        "text": [
+          "#f5f0e8 warm white",
+          "#a09070 muted gold-brown"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond (italic for hero)",
+        "body": "Josefin Sans 100-600, wide-tracked uppercase labels",
+        "jp": "Noto Serif JP 300/400"
+      },
+      "shape": {
+        "radius": "0",
+        "shadow": "none; depth by layering and radial overlays; blur only on nav"
+      },
+      "imagery": "warm astronomical photography - black with gold-orange light rays (nebula, particles); textures (silk, topography grid, dark stone) at 4-7%; single dark device with warm spotlight",
+      "intended_use": "luxury / premium brand and technology showcase landing page",
+      "note": "SVG diamond-wing logo mark; fadeUp 1.4s; hero zoom 16s; Font Awesome solid in gold"
+    },
+    {
+      "id": "25dc0765-8c64-47b2-9817-19944f2a1f23",
+      "name": "veliora-luxe",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "ultra-luxury lifestyle concierge brand (bespoke experiences, private retreats, automotive); Japanese precision meets Western classical opulence; restrained, confident, evocative; 'Defining the Essence of Luxury'",
+      "background": "dark",
+      "palette": {
+        "primary": "#C9A96E",
+        "accent": "#C9A96E",
+        "accent_hue": "gold (single accent; light #E8D5A3, dark #8B6914)",
+        "backgrounds": [
+          "#0a0a0a",
+          "#111111",
+          "#1a1a1a"
+        ],
+        "text": [
+          "#f0ede8 warm off-white",
+          "#9a9080 warm gray"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond (most headlines italic)",
+        "body": "Cormorant Garamond 400",
+        "jp": "none specified; Cinzel for logo, uppercase labels, buttons"
+      },
+      "shape": {
+        "radius": "0 (strictly rectilinear)",
+        "shadow": "none; gold glow on timeline dots; no backdrop blur"
+      },
+      "imagery": "warm cinematic: amber interior light against cool blue dusk exteriors; leather, brass, velvet, marble, walnut; classical architecture; 350-particle gold wave canvas in hero",
+      "intended_use": "concierge / hospitality / luxury lifestyle landing page",
+      "note": "no sans-serif or monospace; outline gold buttons fill on hover; large semi-transparent V watermark; four-point star watermark on photography"
+    },
+    {
+      "id": "91fa785b-1179-4c90-8a03-811cbb4be63f",
+      "name": "veliora-module",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese B2B modular system-architecture platform; tagline 構造が、美しさを定義する。; authoritative, precise, minimal, enterprise-grade, zero warmth; dark cinematic",
+      "background": "dark",
+      "palette": {
+        "primary": "#4b7cf3",
+        "accent": "#4b7cf3",
+        "accent_hue": "electric blue (the only non-neutral colour; hover #3a6be0; glow rgba(75,124,243,.25)); green #4bf382 only for UP stat badges",
+        "backgrounds": [
+          "#0d0d0e",
+          "#141416",
+          "#1a1a1d",
+          "#2a2a2e"
+        ],
+        "text": [
+          "#f0f0f2",
+          "#888894",
+          "#555560"
+        ]
+      },
+      "fonts": {
+        "display": "Bebas Neue (display numbers only)",
+        "body": "Noto Sans JP 300 (700 for hero headlines)",
+        "jp": "Noto Sans JP; Rajdhani 300-700 for UI, all English headings, labels (always tracked)"
+      },
+      "shape": {
+        "radius": "0 (50% circles for process steps, social icons)",
+        "shadow": "none; blue glow on hover; no backdrop blur"
+      },
+      "imagery": "cool desaturated near-monochrome: server racks, data centers, industrial machinery, planetary/grid abstracts, circuit blueprint texture at 12%",
+      "intended_use": "enterprise technology / infrastructure / platform landing page",
+      "note": "2x2 module-grid logomark in accent blue; feature card top border slides in from left; ken-burns 18s; Font Awesome 6.5"
+    },
+    {
+      "id": "26ddebe4-ba6d-4c98-a9f0-4848764f4666",
+      "name": "veliora-frame",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Tokyo design studio offering creative framing (digital archive, identity, editorial); tagline 本質を、枠に収める。; dark luxury, sophisticated, minimal, aspirational; page presented inside a gold-ringed 900px frame",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a55a",
+        "accent": "#c9a55a",
+        "accent_hue": "gold (sole accent, never a fill; light #e2c07a, dark #9a7a3a)",
+        "backgrounds": [
+          "#141210",
+          "#1a1714",
+          "#221f1a",
+          "#0e0c09"
+        ],
+        "text": [
+          "#e8e0d4",
+          "#a09070"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300-400",
+        "body": "Josefin Sans 100-300, extreme tracking 0.2-0.35em",
+        "jp": "Noto Serif JP (hero headline)"
+      },
+      "shape": {
+        "radius": "0 (FAQ icon circles 50%)",
+        "shadow": "only the page wrapper (deep glow + dark ring + gold ring)"
+      },
+      "imagery": "architectural editorial: stark concrete, geometric staircases, corridors, ochre interior; desaturated/dimmed (hover darker); portrait 3:4 portfolio cards; SVG noise at 4%",
+      "intended_use": "design studio / portfolio / identity landing page",
+      "note": "no bold type anywhere; gold gradient hairlines flank section titles; no entrance animations; four-point star watermark; Font Awesome regular preferred"
+    },
+    {
+      "id": "0f79294b-0246-4f2f-96cf-401c4905c9b1",
+      "name": "veliora-layer",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese enterprise B2B data-analytics / infrastructure platform; 'Structure Gives Value Its Form.'; confident, architectural, restrained; layered-architecture metaphors; exclusively dark monochromatic",
+      "background": "dark",
+      "palette": {
+        "primary": "#ffffff",
+        "accent": null,
+        "accent_hue": "none - zero chromatic accent (icons #c8c8c8); depth from layered near-blacks",
+        "backgrounds": [
+          "#0a0a0a",
+          "#111111",
+          "#161616",
+          "#1a1a1a",
+          "#1e1e1e"
+        ],
+        "text": [
+          "#f0f0f0",
+          "#999999",
+          "#666666",
+          "#ffffff headings"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond (mixed weights within one headline: 300 italic / 700 bold)",
+        "body": "Outfit 300 (geometric sans)",
+        "jp": "none specified (Japanese body copy)"
+      },
+      "shape": {
+        "radius": "10px cards, 12px images, 20px badge pill, 30px CTA, 9999px step circles",
+        "shadow": "no box-shadow; glass nav blur(20px) and blur(6px) on process overlay cards"
+      },
+      "imagery": "all grayscale-processed: abstract architecture, layered planes, circuit boards, structured geometric spaces; fixed SVG noise overlay",
+      "intended_use": "enterprise data / analytics SaaS landing page",
+      "note": "cards lift 3px on hover with 1px white-alpha border; arrow always follows CTA label; Font Awesome shield-halved logo box"
+    },
+    {
+      "id": "faf87305-7cb5-435e-884c-af39de82186a",
+      "name": "veliora-stack",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Tokyo design and technology consultancy (UI design, system architecture, UX strategy); 'Structure the Future.'; serious without being cold; minimal, purposeful; monochromatic with architectural references",
+      "background": "mixed",
+      "palette": {
+        "primary": "#2c2c2c",
+        "accent": "#2563eb",
+        "accent_hue": "single blue (hover #1d4ed8) carrying all interactive states and KPI highlights",
+        "backgrounds": [
+          "#ffffff",
+          "#f0f0f0",
+          "#2c2c2c (hero, philosophy, footer)"
+        ],
+        "text": [
+          "charcoal",
+          "mid-grays"
+        ]
+      },
+      "fonts": {
+        "display": "Playfair Display 700/800",
+        "body": "DM Sans 300-600",
+        "jp": "none specified (Japanese body copy)"
+      },
+      "shape": {
+        "radius": "2px logo bars, 4px buttons, 6px cards, pills for tags, full for toggle",
+        "shadow": "only on hover (lg) and page-wrapper ambient; resting elements shadowless; no blur"
+      },
+      "imagery": "architectural subjects (concrete, foam models, drafting desks, isometric sketches) always grayscale(60-100%) brightness .55-.85; desaturation removed on hover",
+      "intended_use": "design / technology consultancy landing page in an 860px centered wrapper",
+      "note": "stacked-layers logo built from CSS spans; clip-path arrow step badges; donut chart"
+    },
+    {
+      "id": "0753a82d-5e92-4743-a60e-5ca2776e263e",
+      "name": "veliora-flex",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese enterprise B2B digital-infrastructure SaaS (flexible middleware) - 変化を力に変える、柔軟なデジタル基盤。; tech-forward, precision-engineered, dark; server-room / circuit-board aesthetic",
+      "background": "dark",
+      "palette": {
+        "primary": "#00aaff",
+        "accent": "#29c8ff",
+        "accent_hue": "electric blue glows (#00aaff, bright #29c8ff, button fill #0077cc, teal #00d4ff); no warm colours (copper photos hue-rotated to blue)",
+        "backgrounds": [
+          "#020d1f",
+          "#041428",
+          "#071e35"
+        ],
+        "text": [
+          "#ffffff",
+          "#7ab0cc",
+          "#4a7a9a"
+        ]
+      },
+      "fonts": {
+        "display": "Rajdhani 400-700, wide tracking, gradient text white->#29c8ff",
+        "body": "Noto Sans JP 300-700",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "0; icon circles 50%; chamfered clip-path buttons",
+        "shadow": "blue box-glows and drop-shadow glows; glass nav blur(16px)"
+      },
+      "imagery": "technical/industrial only: circuit board macro and server rack with fiber optics, brightness .25-.7 + hue-rotate(180deg) to blue-teal; floating blue particles",
+      "intended_use": "enterprise infrastructure / middleware / SaaS landing page",
+      "note": "2px gradient top line on cards; stat counters animate 1.8s; card hover lifts 6px with blue shadow; Font Awesome solid only"
+    },
+    {
+      "id": "8902012b-24d5-46f6-ae9a-4368bff19153",
+      "name": "veliora-layout",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese design/UX layout studio; precise, authoritative, minimal; disciplined, grid-obsessed; cool neutral palette with a sharp blue accent; the page is a white card in an 820px column on grey",
+      "background": "light",
+      "palette": {
+        "primary": "#2d2d2d",
+        "accent": "#1a56c4",
+        "accent_hue": "sharp blue (hover #1244a8, light #3a6fd8)",
+        "backgrounds": [
+          "#ffffff",
+          "#f5f5f5",
+          "#fafafa",
+          "#ebebeb (outer)",
+          "#3a3a3a (footer)"
+        ],
+        "text": [
+          "#2d2d2d",
+          "#555555",
+          "#888888"
+        ]
+      },
+      "fonts": {
+        "display": "Bebas Neue (ghost watermark text only, ~5% opacity)",
+        "body": "Barlow 300-800 (numbers, labels, English, nav, CTAs)",
+        "jp": "Noto Sans JP 300-700 for Japanese headings, body, FAQ"
+      },
+      "shape": {
+        "radius": "3px (near-sharp); nothing pill",
+        "shadow": "page card 0 0 40px .15; card hover blue-tinted 0 2px 12px"
+      },
+      "imagery": "cool gray architectural photography (concrete, tile grids), grayscale 20-40%",
+      "intended_use": "design / UX studio landing page (hero, brand cards, solutions, stats, FAQ)",
+      "note": "section titles have a 2px dark underline; alternating white / #f5f5f5 sections; sticky 56px header; Font Awesome 6.5.0"
+    },
+    {
+      "id": "6f79c52d-e254-4196-8e1d-7f4998862865",
+      "name": "veliora-gallery",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "luxury contemporary art gallery with Japanese-influenced aesthetic; cinematic, restrained, contemplative; exhibition wall-text tone; atmosphere over information density",
+      "background": "dark",
+      "palette": {
+        "primary": "#c8a96e",
+        "accent": "#c8a96e",
+        "accent_hue": "warm antique gold (single accent, used sparingly; light #dfc28a)",
+        "backgrounds": [
+          "#080808",
+          "#0f0f0f",
+          "#161616"
+        ],
+        "text": [
+          "#f0ede8 warm off-white",
+          "65% / 35% opacity steps"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300/400 incl. italic, tracking .06em",
+        "body": "Josefin Sans 100-300, ALL CAPS labels at .18-.25em tracking",
+        "jp": "Noto Serif JP 300, sometimes vertical writing-mode"
+      },
+      "shape": {
+        "radius": "0, no card component",
+        "shadow": "none; light backdrop blur(2px) on header only"
+      },
+      "imagery": "warm dramatic single-source spotlighting: gallery interiors, white organic sculptures, dark monoliths, polished gold forms; slightly desaturated and dimmed",
+      "intended_use": "art gallery / exhibition / curated portfolio landing page",
+      "note": "no bold anywhere (scale contrast instead); gold hairline borders at 22%; asymmetric editorial grid; concrete texture at 8% on stats bar"
+    },
+    {
+      "id": "75fded4a-003b-43ad-8c8e-ddb8f640bc95",
+      "name": "veliora-vision",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "futuristic visual design and branding studio at the intersection of art and technology; deep space, cosmic energy, cyberpunk city; commanding, poetic, visionary; 'Defining the Future of Visual Logic.'",
+      "background": "dark",
+      "palette": {
+        "primary": "#7b2fff",
+        "accent": "#7b2fff",
+        "accent_hue": "electric violet-purple (#7b2fff; mid #9b59f5, light #c084fc, text #a855f7)",
+        "backgrounds": [
+          "#06071a",
+          "rgba(30,20,70,.7) glass cards"
+        ],
+        "text": [
+          "#e2e8f0 cool off-white",
+          "#94a3b8 slate"
+        ]
+      },
+      "fonts": {
+        "display": "Cinzel 400/700/900 (headings, logo, stats)",
+        "body": "Raleway 300-700",
+        "jp": "Japanese explanatory subtitles (no named JP face)"
+      },
+      "shape": {
+        "radius": "4-6px cards, 2px buttons, 50% social icons",
+        "shadow": "violet glows (0 0 30px / 0 0 60px) replace drop shadows; nav blur(14px)"
+      },
+      "imagery": "cosmic nebula, particle fields, cyberpunk city, futuristic architecture - CSS filtered brightness .4-.75 saturate 1.3-1.6 hue-rotate 200-240deg into navy-violet; purple radial overlays",
+      "intended_use": "futuristic creative / technology / branding studio landing page",
+      "note": "outline (ghost) buttons only; glowPulse on service icons; light-streak animation on stats; V-diamond logo mark SVG"
+    },
+    {
+      "id": "62b30d89-df81-4958-aad0-5fe47a614967",
+      "name": "veliora-art",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "single-artist fine art portfolio and commission platform; 'Creation Beyond Borders'; dark cinematic one-page experience keeping focus on large abstract oil paintings; intimate first-person artist voice",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a84c",
+        "accent": "#c9a84c",
+        "accent_hue": "gold (rules, borders, dots, icons, button strokes; never large fills); dark + gold only",
+        "backgrounds": [
+          "#0a0a0a",
+          "#111118",
+          "#13131d",
+          "#0e0e16"
+        ],
+        "text": [
+          "#f0ede6 warm cream",
+          "#a09a8e"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300/400 (italic 300 for quotes)",
+        "body": "Raleway 200-400, never bold",
+        "jp": "none specified"
+      },
+      "shape": {
+        "radius": "0 (circular artwork-plus button only)",
+        "shadow": "none; no backdrop blur anywhere"
+      },
+      "imagery": "warm-to-neutral artwork photography; hero brightness .55 with 18s Ken Burns; section backgrounds are artwork at 15-22% brightness; square artwork grid, 4 columns, 4px gaps",
+      "intended_use": "artist / portfolio / commission landing page",
+      "note": "section headers have a 32px gold left bar and a faint right rule; vertical process timeline with gold dots; four-point star watermark on artwork"
+    },
+    {
+      "id": "350e634d-a23f-4dd3-a285-2d478b3a8e09",
+      "name": "veliora-canvas",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "premium creative and branding studio at the intersection of fine art, architecture and digital craft; dark-mode only, nocturnal, cinematic; restrained, deliberate, authoritative; 'Creating Beyond the Frame' / 余白が、思考を加速させる。",
+      "background": "dark",
+      "palette": {
+        "primary": "#c8b89a",
+        "accent": "#c8b89a",
+        "accent_hue": "warm gold-sand (accents and icons on hover only); otherwise white at varying opacity",
+        "backgrounds": [
+          "#0a0a0a",
+          "#111111",
+          "#181818",
+          "#1e1e1e"
+        ],
+        "text": [
+          "#ffffff",
+          "#e8e4df",
+          "rgba(255,255,255,.45)"
+        ]
+      },
+      "fonts": {
+        "display": "Cinzel 400/600 (logo, hero title, section titles, buttons)",
+        "body": "Montserrat 300-500 (nav, labels, body)",
+        "jp": "Cormorant Garamond 300 for philosophy headlines and pull quotes; no JP face named"
+      },
+      "shape": {
+        "radius": "0 (50% for process step circles)",
+        "shadow": "none; no box-shadows on cards"
+      },
+      "imagery": "architectural, minimal, monolithic photography; grayscale(.3) brightness(.75) at rest, colour restores on hover; hero brightness .35 with 20s slow zoom; fixed SVG noise overlay",
+      "intended_use": "creative / branding / architecture studio portfolio landing page",
+      "note": "works grid with 3px gaps; ALL CAPS Montserrat section labels at 0.3em+; four-point star watermark; Font Awesome 6.5.1"
+    },
+    {
+      "id": "fd929ce0-2a2d-4a76-bbfb-2b85383d3001",
+      "name": "veliora-creative",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese creative agency (Web Design, Branding, Motion); 'CREATIVE BEYOND LIMITS'; dark cosmic visual language evoking outer space; confident, aspirational, laconic",
+      "background": "dark",
+      "palette": {
+        "primary": "#2563ff",
+        "accent": "#2563ff",
+        "accent_hue": "electric blue (stats, category labels, connector dots, hover)",
+        "backgrounds": [
+          "#0a0a0a",
+          "#111111",
+          "#181818"
+        ],
+        "text": [
+          "#ffffff",
+          "#cccccc",
+          "#aaaaaa"
+        ]
+      },
+      "fonts": {
+        "display": "Bebas Neue (hero headlines, step numbers, stat numbers)",
+        "body": "Barlow 300 (400 links, 600/700 titles); Barlow Condensed 700 for compact labels",
+        "jp": "none named (Japanese primary copy)"
+      },
+      "shape": {
+        "radius": "essentially 0; circles for scroll button, service icons, work '+' button",
+        "shadow": "none; glass nav blur(12px)"
+      },
+      "imagery": "cosmic nebula (deep indigo, teal, near-black) at ~35% brightness; photography grayscale(80%) by default and full colour on hover; no bright or daytime photography",
+      "intended_use": "creative agency / portfolio landing page (hero, works grid, services, process, FAQ, stats)",
+      "note": "border-separated portfolio grid with no gutters; underline slides in from left on nav hover; no reveal animations or parallax; Font Awesome 6.5.1"
+    },
+    {
+      "id": "403aea7d-4984-4d7a-bbab-f7b64fa10ee6",
+      "name": "veliora-impact",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese B2B marketing and growth consultancy; bold, punchy, results-oriented, authoritative, formal-but-confident; headline lands like a gut-punch; high-contrast, no mid-tone greys",
+      "background": "mixed",
+      "palette": {
+        "primary": "#0b1a35",
+        "accent": "#f06a00",
+        "accent_hue": "orange gradient 135deg #f06a00 -> #ff8c2a (CTAs, icons, stat numbers, header rule); green/red only for before/after check marks",
+        "backgrounds": [
+          "#0b1a35",
+          "#0e2144",
+          "#071328",
+          "#f3f5f9 (light sections)"
+        ],
+        "text": [
+          "white / rgba(255,255,255,.65) on navy",
+          "dark on off-white"
+        ]
+      },
+      "fonts": {
+        "display": "Oswald 400-700 (stat numbers, step numbers, wordmark)",
+        "body": "Noto Sans JP 300-900 (hero weight 900)",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "3px buttons, 4-6px cards, 8px compare block, 50% icon circles; clip-path chevron process arrows",
+        "shadow": "cards 0 10px 40px rgba(0,0,0,.18); orange glow on primary button; header blur(10px)"
+      },
+      "imagery": "cinematic blue-hour offices and data-visualisation photography with warm amber highlights; circuit-board texture at 7%; orange grid lines at 6%",
+      "intended_use": "B2B marketing / growth / analytics consultancy landing page",
+      "note": "alternating navy and off-white sections; before/after comparison block; 4-point star watermark; Font Awesome 6.5"
+    },
+    {
+      "id": "7cfc259f-9915-4acd-9040-ae5a5e2340ca",
+      "name": "veliora-boost",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese B2B SaaS / business-consulting 'next-generation business accelerator' LP for decision makers; confident, results-oriented, formal, data-backed; KPIs are hero content",
+      "background": "dark",
+      "palette": {
+        "primary": "#f07520",
+        "accent": "#f07520",
+        "accent_hue": "orange (CTAs, numbers, icons, hover glows, accent borders)",
+        "backgrounds": [
+          "#080f1e",
+          "#0d1b35",
+          "#112244",
+          "#1a2f55"
+        ],
+        "text": [
+          "#ffffff",
+          "#a0b0cc"
+        ]
+      },
+      "fonts": {
+        "display": "Barlow 900",
+        "body": "Noto Sans JP 400/500/700",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "6px buttons, 12px cards, 10px icon wrappers, pill badges",
+        "shadow": "dark drop shadows plus orange ring glow on hover; orange text-shadow glow on card icons; no blur"
+      },
+      "imagery": "cinematic dark cool-navy photography with warm orange highlights: night cityscape, industrial gears, data-dashboard glow, strategy flatlay; used at 0.5-0.6 opacity",
+      "intended_use": "B2B SaaS / consulting landing page with stats bar, services, process, FAQ, contact form",
+      "note": "cards lift 6px on hover; fadeUp stagger 150ms; icons never standalone; Font Awesome solid"
+    },
+    {
+      "id": "72867b70-3cc2-4670-823e-6d4bb74605c8",
+      "name": "veliora-brand",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "premium brand-strategy consultancy for the Japanese market; luxury real estate / high-end financial services / architectural photography; formal, aspirational, confident",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a84c",
+        "accent": "#c9a84c",
+        "accent_hue": "gold (sparingly: borders, icon fills, labels, hover; light #e8c97a, pale #f0dfa0)",
+        "backgrounds": [
+          "#0a1628",
+          "#0f2040",
+          "#162d52"
+        ],
+        "text": [
+          "white at 70% body, 40% muted, 8% borders"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300-700 (italic 400/600)",
+        "body": "Montserrat 300-700, small 0.82-0.85rem",
+        "jp": "none named (Japanese client-facing copy)"
+      },
+      "shape": {
+        "radius": "4px cards, 2px buttons",
+        "shadow": "subtle 0 2px 16px rgba(0,0,0,.35); gold top line on card hover; fixed glass nav"
+      },
+      "imagery": "architectural and urban: twilight cityscapes, glass facades; cool navy/slate; full-bleed with left-to-right gradients; fixed SVG noise overlay at .35",
+      "intended_use": "brand strategy / consulting landing page; includes a 16:9 pitch-deck slide template",
+      "note": "4-point star brand mark with SVG logo files; gold gradient hairline separators; 9 components"
+    },
+    {
+      "id": "e528e15f-ca85-46aa-af0e-00d4e25c3686",
+      "name": "veliora-sales",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese B2B SaaS for sales analytics and pipeline management by Chart Design; direct, confident, data-led, addresses the user's pain points; 営業の精度を、データで加速させる。",
+      "background": "mixed",
+      "palette": {
+        "primary": "#0a1628",
+        "accent": "#f47c20",
+        "accent_hue": "vivid orange (CTAs, icon accents, borders, underlines; hover #ff9340)",
+        "backgrounds": [
+          "#0a1628",
+          "#0d1f3c",
+          "#122245",
+          "#f5f7fa (light sections)"
+        ],
+        "text": [
+          "#c8d4e8",
+          "#7a90b0"
+        ]
+      },
+      "fonts": {
+        "display": "Barlow 800-900 (hero H1, stats, wordmark)",
+        "body": "Noto Sans JP 400-900",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "6px buttons, 12px cards, 10px FAQ and icon boxes",
+        "shadow": "deep 0 20px 60px rgba(0,0,0,.6); orange glow on CTA; no backdrop blur"
+      },
+      "imagery": "dark navy analytics dashboard hero with 3D CSS perspective; grayscale editorial photos of stressed/pensive businesspeople for problem framing; dot-grid overlay, blurred glow orbs, bokeh floats",
+      "intended_use": "B2B SaaS landing page; also includes an analytics dashboard UI kit (sidebar, KPI cards, line/bar/donut charts)",
+      "note": "alternating navy and light sections; orange 3px/50px underline under section titles; custom V-chevron logo SVG; Font Awesome solid"
+    },
+    {
+      "id": "8296e84c-c1da-4684-93cb-c55f9575dbef",
+      "name": "veliora-commerce",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese B2B SaaS e-commerce platform for mid-to-large enterprises (次世代コマースプラットフォーム); premium B2B SaaS meets enterprise trust; confident, results-driven; deep dark navy with electric blue",
+      "background": "dark",
+      "palette": {
+        "primary": "#2563eb",
+        "accent": "#2563eb",
+        "accent_hue": "electric blue (sole accent; glow rgba(37,99,235,.35); lighter #3b82f6); no warm tones",
+        "backgrounds": [
+          "navy-900 deepest",
+          "navy-800 base",
+          "navy-700 alt",
+          "#1a2d4a cards"
+        ],
+        "text": [
+          "#ffffff",
+          "#94a3b8"
+        ]
+      },
+      "fonts": {
+        "display": "Barlow 700-800 (numerals, stats, logo), tight tracking",
+        "body": "Noto Sans JP 300 (700 bold), line-height 1.8-1.9",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "6px small, 8-12px buttons/FAQ, 12-16px cards, 100px pills",
+        "shadow": "heavy shadows on image containers (0 32px 80px), blue button/step glows; nav blur(12px) only"
+      },
+      "imagery": "professional business/tech photography in navy/slate tones with gradient overlays for legibility; hero radial blue ambient glow",
+      "intended_use": "enterprise SaaS / e-commerce platform marketing site (hero, features, case studies, stats, process, FAQ)",
+      "note": "logo = Font Awesome 'V' glyph in blue; 44px rounded-square blue-tinted icon containers; no entry animations"
+    },
+    {
+      "id": "b9b7ec0a-f166-4a44-a824-710e42bd6d58",
+      "name": "veliora-market",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese B2B visual-strategy agency (README titled 'Chart Design - Design System'): strategic marketing, content production, data analytics; 市場を動かす、視覚的な戦略を。; professional and authoritative but approachable; data-confident",
+      "background": "mixed",
+      "palette": {
+        "primary": "#1a4fdb",
+        "accent": "#f5a623",
+        "accent_hue": "primary blue #1a4fdb (dark #0d2f8a, light #3b6ef8, pale #e8eeff) + gold #f5a623 only for number suffixes and small accents; green/yellow tints inside icon circles",
+        "backgrounds": [
+          "#ffffff",
+          "#f5f7fa",
+          "dark navy-to-blue footer CTA gradient"
+        ],
+        "text": [
+          "dark on light; white on hero/footer"
+        ]
+      },
+      "fonts": {
+        "display": "Barlow Condensed 700/900 (logo, stat numbers, step badges)",
+        "body": "Noto Sans JP 300-900 (headings weight 900)",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "6px buttons, 12px cards, 14px stat cards, 50% icon circles",
+        "shadow": "blue-tinted card hover (0 12px 40px rgba(26,79,219,.12)); blue button glow"
+      },
+      "imagery": "cinematic cool-toned cityscapes and data/network visuals (dark hero at brightness .45 with 120deg blue gradient); clean warm-neutral office photography for process steps",
+      "intended_use": "B2B marketing / visual-strategy agency landing page",
+      "note": "alternating white and #f5f7fa sections; 3px blue gradient accent bar scales in on card hover; four-point star watermark"
+    },
+    {
+      "id": "4d3a18ed-5193-4f79-8f90-3907d0333691",
+      "name": "veliora-pulse",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "enterprise real-time analytics and AI decision-intelligence platform; confident, technical, forward-leaning; deep-space dark theme with vivid violet/blue/cyan glow as the key brand motif",
+      "background": "dark",
+      "palette": {
+        "primary": "#7c3aed",
+        "accent": "#06b6d4",
+        "accent_hue": "purple #7c3aed (primary CTA), blue #2563eb (gradient partner), cyan #06b6d4 (highlights, links, 'Pulse' wordmark), violet #a855f7; success green #22d3a8 for metric deltas",
+        "backgrounds": [
+          "#050814",
+          "#080e22",
+          "#0c1230"
+        ],
+        "text": [
+          "#f0f4ff",
+          "#8892b0",
+          "#4a5580"
+        ]
+      },
+      "fonts": {
+        "display": "Syne 700-800 (headings, logo, stat values, step numbers)",
+        "body": "DM Sans 400-600, line-height 1.65-1.75",
+        "jp": "none named (English primary; Japanese-localized hero exists)"
+      },
+      "shape": {
+        "radius": "8-10px buttons, 16px cards, 20px process image, 9999px label pills",
+        "shadow": "purple/blue/cyan glows (0 0 60px rgba(124,58,237,.15)); nav glass blur(16px); pulsing CTA glow"
+      },
+      "imagery": "AI-generated deep-space particle and energy-stream imagery in violet and cyan, neural-network-like structures; gradient overlays for text legibility",
+      "intended_use": "AI / data analytics SaaS marketing site; also ships an in-product analytics dashboard UI kit (sidebar nav, metric cards, sparklines, anomaly scoring)",
+      "note": "gradient text cyan->violet; 1px 'light leak' gradient line on card tops; waveform SVG logo with purple-to-cyan gradient; cards float animation 6s"
+    },
+    {
+      "id": "51f24d58-0f0a-46b1-b8e6-b2d95897e5c6",
+      "name": "veliora-nexus",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "enterprise B2B network-infrastructure company (ultra-low-latency computing, end-to-end encryption, globally scalable architecture); authoritative, precise, minimal; strictly monochromatic - no colour accent whatsoever",
+      "background": "dark",
+      "palette": {
+        "primary": "#f0f0f0",
+        "accent": null,
+        "accent_hue": "none - built entirely from near-black backgrounds and white opacity layers",
+        "backgrounds": [
+          "#111213",
+          "#1a1b1e",
+          "#202226"
+        ],
+        "text": [
+          "#f0f0f0",
+          "#a0a4ac",
+          "#5a5e66"
+        ]
+      },
+      "fonts": {
+        "display": "Barlow Condensed 700 (headlines, section titles, performance numbers)",
+        "body": "Barlow 400-600",
+        "jp": "none named"
+      },
+      "shape": {
+        "radius": "4px buttons, 6px cards, 8px icon boxes",
+        "shadow": "none; depth through background steps; nav blur(14px)"
+      },
+      "imagery": "full-bleed dark photography (circuit boards, network nodes, server racks, data centers) run through brightness .18-.35 grayscale .4-.6; left-to-right gradient on hero",
+      "intended_use": "infrastructure / networking / enterprise technology landing page",
+      "note": "2px gaps between cards filled with border colour; display headlines are sentence case with trailing period; V-chevron logo; IconBox 38px frosted square; Font Awesome solid"
+    },
+    {
+      "id": "25b0c103-8d4a-43a4-bf8c-041e4abdb462",
+      "name": "veliora-flow",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "B2B SaaS data-flow management platform for Japanese enterprises; ビジネスの血流を、最適化する。; authoritative, technical, confident; dark cinematic futuristic",
+      "background": "dark",
+      "palette": {
+        "primary": "#1458c8",
+        "accent": "#00d4ff",
+        "accent_hue": "brand blue #1458c8 / bright #2a7fff / glow #4facff plus cyan #00d4ff for trend lines, checks, top-border accents",
+        "backgrounds": [
+          "#020810",
+          "#040f1e",
+          "#071426"
+        ],
+        "text": [
+          "#e8f4ff",
+          "#7da8cc",
+          "#4a7a9b"
+        ]
+      },
+      "fonts": {
+        "display": "Orbitron (logo mark, H2s, big data values; tracking .05-.12em)",
+        "body": "Noto Sans JP 300/500/700/900",
+        "jp": "Noto Sans JP; Rajdhani uppercase for eyebrows and technical tags"
+      },
+      "shape": {
+        "radius": "6-8px buttons, 10-16px cards, 100px eyebrow pills",
+        "shadow": "coloured blue/cyan glows only; nav blur(12px)"
+      },
+      "imagery": "data networks, circuits, particle fields, processed with saturate 1.4 brightness .8 hue-rotate 190-200deg; floating-dots particle canvas in hero; no people",
+      "intended_use": "data / integration / analytics SaaS landing page (Japanese)",
+      "note": "icons always inside 52px gradient-filled rounded boxes; gradient hairline top accent on cards; counters; Font Awesome solid"
+    },
+    {
+      "id": "b1e372b1-5c68-446c-ad47-ea88fd080be0",
+      "name": "veliora-launch",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "next-generation SaaS platform for business growth and AI-powered analytics; breaking through stagnation, frontier innovation, cosmic ambition; confident, forward-leaning, high-stakes; second person; 'Beyond the Frontier.'",
+      "background": "dark",
+      "palette": {
+        "primary": "#3a7bfd",
+        "accent": "#a855f7",
+        "accent_hue": "layered: blue #3a7bfd (primary CTA), purple #7c3aed (secondary), violet #a855f7 (hover/glow), indigo #6366f1, cyan #22d3ee (eyebrows)",
+        "backgrounds": [
+          "#060714",
+          "#0a0d1f",
+          "#0f1229",
+          "#13162e"
+        ],
+        "text": [
+          "#f0f2ff",
+          "#9ba3c4"
+        ]
+      },
+      "fonts": {
+        "display": "Rajdhani 600/700 (headings, step numbers, nav logo)",
+        "body": "Outfit 300-600",
+        "jp": "none named"
+      },
+      "shape": {
+        "radius": "12px cards, 8px buttons, 10px icon wraps, 6px small controls",
+        "shadow": "coloured glows (blue on primary, purple/violet on secondary); ambient blue/purple orbs at 8%"
+      },
+      "imagery": "deep-space photography, AI neural-network visuals, rocket launches (warm exhaust against cold night), starfield; left-edge dark gradient for legibility; four-point star watermark",
+      "intended_use": "AI / analytics SaaS landing page",
+      "note": "hover inner glow overlay on cards; scroll-reveal; 48px tinted icon wraps with matching glow; Font Awesome 6"
+    },
+    {
+      "id": "0d5d9b8d-a5a1-4ed7-9785-e3816fac9636",
+      "name": "veliora-startup",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "dark B2B SaaS / data-infrastructure brand for technical enterprise buyers; confident, forward-looking, slightly cosmic; 'the next-generation standard that accelerates the future'; deep navy space aesthetic",
+      "background": "dark",
+      "palette": {
+        "primary": "#1a6fff",
+        "accent": "#f5a623",
+        "accent_hue": "vivid electric blue #1a6fff (light #4d8fff) with a sparse amber/gold secondary #f5a623 for speed/power concepts",
+        "backgrounds": [
+          "#050c1a",
+          "#0a1628",
+          "#0d1e35",
+          "#112240"
+        ],
+        "text": [
+          "#e8f0ff",
+          "#7a94b8",
+          "#4a6080"
+        ]
+      },
+      "fonts": {
+        "display": "Syne 400-800, tight -0.02em tracking",
+        "body": "DM Sans 300-600, line-height 1.65-1.75",
+        "jp": "none named (Japanese placeholder copy)"
+      },
+      "shape": {
+        "radius": "6px nav buttons, 8px CTA, 12px feature cards, 16px dive-deeper panel, 4px problem images; clip-path hexagon logo",
+        "shadow": "blue glow shadows on interactive states; nav blur(16px)"
+      },
+      "imagery": "cool dark high-contrast: 3D rendered blue/indigo orb (mix-blend screen, floating), circuit boards, analytics charts, monitors in dim environments; problem section in grayscale; CSS star field",
+      "intended_use": "SaaS / data infrastructure marketing site with hero orb, features, problem/solution, steps, FAQ",
+      "note": "CTA shimmer slides across on hover; top-edge 2px gradient line on hovered cards; tinted 52px rounded-square icon boxes (gold for speed, blue for security/intelligence)"
+    },
+    {
+      "id": "9ed74b4e-a967-4c9e-ac27-7cb49acb7d65",
+      "name": "veliora-tech",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "next-generation enterprise infrastructure company (self-healing architecture, zero-trust, multi-cloud, low latency); confident, technical, no hype, every claim backed by a metric; code-world aesthetic with '// SECTION NAME' tags",
+      "background": "dark",
+      "palette": {
+        "primary": "#00c8ff",
+        "accent": "#00c8ff",
+        "accent_hue": "single electric cyan (binary palette: dark surfaces + one signal colour); gradients only of opacity",
+        "backgrounds": [
+          "#040810",
+          "#070e1c",
+          "#0a1628"
+        ],
+        "text": [
+          "#e8f4ff",
+          "78% / 48% / 28% opacity steps"
+        ]
+      },
+      "fonts": {
+        "display": "Space Grotesk 300-700 (all UI text)",
+        "body": "Space Grotesk",
+        "jp": "none named; DM Mono 300-400 for section tags, roadmap phase markers, nav CTA"
+      },
+      "shape": {
+        "radius": "0 everywhere",
+        "shadow": "glow only (0 0 8-20px cyan); nav blur backdrop"
+      },
+      "imagery": "cool-toned atmospheric photography: deep space, earth from orbit, blade servers, tangled legacy cables vs modern rack, fiber optic macro, night highways; ghosted underlays with mix-blend screen at 6-9%",
+      "intended_use": "enterprise infrastructure / cloud / developer-technology landing page (hero, features, comparison, performance stats, roadmap, FAQ)",
+      "note": "icons always in 44px boxes with 1px cyan border; feature grid with 1px gap as a unified block; glow line fades in on card hover; no entrance animations"
+    },
+    {
+      "id": "98a693c8-b61f-4947-8e63-65b94dc74ff5",
+      "name": "veliora-trust",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Tokyo private wealth-management and financial advisory firm founded in 1978; authoritative, measured, understated; trusted, discreet partner for multigenerational wealth; dark navy with steel blue",
+      "background": "dark",
+      "palette": {
+        "primary": "#1a3a6e",
+        "accent": "#4a7ab5",
+        "accent_hue": "steel blue (#4a7ab5, lighter #6f9fd0); no bright colours, no red/green semantic colours",
+        "backgrounds": [
+          "#030810",
+          "#060b14",
+          "#0a1020",
+          "#0d1a35"
+        ],
+        "text": [
+          "#eef2f7",
+          "rgba(238,242,247,.78)",
+          "rgba(238,242,247,.48)"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond (H1-H3, stat numbers, wordmark, timeline years)",
+        "body": "Jost 300-600",
+        "jp": "none named"
+      },
+      "shape": {
+        "radius": "0 almost everywhere; 4px icon boxes",
+        "shadow": "minimal: blue-tinted lift on service-card hover; nav blur(14px)"
+      },
+      "imagery": "large-scale architectural/financial photography - upward view of skyscrapers at 70% opacity, night sky haze at 16%; cool dark navy grade; photography only",
+      "intended_use": "private banking / wealth management / financial advisory landing page",
+      "note": "service cards have a 2px accent top border; bordered 4-column values grid; no entrance animations; dark only"
+    },
+    {
+      "id": "30166175-623e-46a7-a3e4-759c7c61a0e0",
+      "name": "veliora-formal",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "prestigious Tokyo legal and institutional consulting firm est. 1892; formal authority, quiet luxury; old-world law chamber meets modern global strategy; deliberately austere, dark, cinematic",
+      "background": "dark",
+      "palette": {
+        "primary": "#b8965a",
+        "accent": "#b8965a",
+        "accent_hue": "gold (single accent; light #d4b07a)",
+        "backgrounds": [
+          "#080810 (faint indigo tint)",
+          "mid-bg",
+          "footer darker"
+        ],
+        "text": [
+          "#f5f2ee warm off-white",
+          "76% / 46% / 28% opacity steps"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 400/600/700 incl. italic (brand name tracked .24em)",
+        "body": "Jost 300-600",
+        "jp": "none named (primarily English)"
+      },
+      "shape": {
+        "radius": "0 - non-negotiable brand rule",
+        "shadow": "none; border-only cards 1px gold at 18%; nav blur(18px) only"
+      },
+      "imagery": "dark moody photography: nocturnal cityscape panorama with amber street lights, deep-space texture at 18%, classical library with candlelight at 14%, premium office facade desaturated; brightness .88 saturate .75",
+      "intended_use": "law firm / institutional advisory landing page",
+      "note": "service cards grow a 2px gold left border on hover; no entrance animations; stats shown as display serif with unit suffix at ~45% size"
+    },
+    {
+      "id": "131fa83b-51bf-490e-b4e3-231e5a117254",
+      "name": "veliora-executive",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "high-end executive advisory firm in Tokyo (governance, leadership, M&A integration); built on 'earned authority'; sparse, formal English, precision over puffery; monochromatic dark with silver",
+      "background": "dark",
+      "palette": {
+        "primary": "#a8b0c2",
+        "accent": "#a8b0c2",
+        "accent_hue": "none chromatic - silver/charcoal only (silver #a8b0c2, light #c8d0de)",
+        "backgrounds": [
+          "#09090f",
+          "#10111a",
+          "#06060c"
+        ],
+        "text": [
+          "rgba(255,255,255,.78)",
+          "rgba(255,255,255,.48)"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 700 (600 subheads, italic quotes)",
+        "body": "Jost 300-500, never bold",
+        "jp": "none named"
+      },
+      "shape": {
+        "radius": "0 everywhere",
+        "shadow": "none; border-only cards 1px silver at 16%; nav blur(16px) only"
+      },
+      "imagery": "grayscale architectural / abstract / monolithic photography, cinematic cool swirl hero; no people, no bright colours",
+      "intended_use": "executive advisory / board-level consulting landing page",
+      "note": "Roman numerals as list decorators; offset-border portrait decoration; CTA fills silver on hover; no entrance animations"
+    },
+    {
+      "id": "b01a0198-7b40-4ffe-9cee-237014d9b68e",
+      "name": "veliora-pro",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "premium professional services firm in Tokyo (strategic consulting, executive coaching, global expansion); understated luxury, like a private members' club; sharp corners, hairline borders, restraint",
+      "background": "dark",
+      "palette": {
+        "primary": "#c9a96e",
+        "accent": "#c9a96e",
+        "accent_hue": "gold (single accent; light #e0c898); no secondary accents",
+        "backgrounds": [
+          "#141210",
+          "#1e1b17",
+          "#0c0a08"
+        ],
+        "text": [
+          "white at 100/80/52/28% opacity"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 400/600/700 (hero, stats, wordmark, ghost step numbers)",
+        "body": "Jost 300-600",
+        "jp": "none named (real site is English)"
+      },
+      "shape": {
+        "radius": "0 throughout",
+        "shadow": "minimal overlay shadow only; nav blur(14px) only; no glows"
+      },
+      "imagery": "cinematic low-key: dusk glass-tower cityscapes with amber lights, executive boardroom interiors in taupe/walnut/gold; brightness .9 saturate .85; no people",
+      "intended_use": "professional services / consulting landing page (about, services grid, stats, process, FAQ)",
+      "note": "services grid uses the gap colour as 1px gold grid lines; service-link arrow gap widens on hover; no entrance animations"
+    },
+    {
+      "id": "b8aab7df-ad1a-466f-aaaa-91c97ff9ca98",
+      "name": "veliora-base",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "corporate/B2B web template for Japanese-market enterprises; authority, precision, measured growth; restrained and typographic; dark navy accents on clean white surfaces; magazine/document feel",
+      "background": "light",
+      "palette": {
+        "primary": "#1e2d3d",
+        "accent": "#3a5f8a",
+        "accent_hue": "muted steel blue (hover/CTA #3a5f8a); silver #8096a7 for decorative labels",
+        "backgrounds": [
+          "#ffffff",
+          "#f0f2f4",
+          "#e8ecef (outer page)",
+          "#151f2b (footer)"
+        ],
+        "text": [
+          "#1e2d3d navy",
+          "#8096a7 silver"
+        ]
+      },
+      "fonts": {
+        "display": "Noto Serif JP 700 (hero headline, mission H2)",
+        "body": "Noto Sans JP 300-700",
+        "jp": "Noto Serif JP / Noto Sans JP; DM Sans for section titles, numbers, wordmark"
+      },
+      "shape": {
+        "radius": "2px cards/images, 3px nav CTA, 4px icon containers",
+        "shadow": "none at rest; hover 0 8px 32px rgba(0,0,0,.09); page wrapper 0 0 60px .15; no backdrop blur"
+      },
+      "imagery": "cool, desaturated corporate photography (grayscale 20-30%): night skyline, glass offices, global network, startup workspace; hero brightness .55",
+      "intended_use": "corporate company-profile site: mission, services, achievements, timeline, FAQ (900px centered column)",
+      "note": "navy 44px icon squares; V-chevron logo SVGs in navy and white; section titles with divider lines; achievements numerals weight 300"
+    },
+    {
+      "id": "3bad8ca4-debf-4445-93b3-538650fd64d0",
+      "name": "veliora-office",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese B2B professional services (consulting, strategic partnerships, custom system development) for long-term structural transformation; authority, trust, precision, ambition; cinematic, structural, serious",
+      "background": "mixed",
+      "palette": {
+        "primary": "#0a1628",
+        "accent": "#1a73e8",
+        "accent_hue": "blue (CTA/links #1a73e8, hover #2196f3); light-blue highlight #a8c8ff; sky blue #d8e8f8 for process section",
+        "backgrounds": [
+          "#0a1628",
+          "#102040",
+          "#1a3560",
+          "#d8e8f8",
+          "#f0f4f8"
+        ],
+        "text": [
+          "white on navy",
+          "#6b82a0 muted on light"
+        ]
+      },
+      "fonts": {
+        "display": "Montserrat 800/700/600 (section titles, stats, nav, logo, all-caps with generous tracking)",
+        "body": "Noto Sans JP 300-900 (hero weight 900)",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "8px cards, 4px buttons, 50% toggles",
+        "shadow": "hover 0 16px 48px rgba(0,0,0,.3); header blur(12px)"
+      },
+      "imagery": "full-bleed darkened cinematic photography in every major section (city skyline at dusk, dark glass office, financial district night) with navy overlays; the mission section inverts to a pale open-sky photo; hexagon-tile pattern at 15% in process",
+      "intended_use": "B2B consulting / systems-development landing page",
+      "note": "hero ken-burns zoom-out 10s; 48x3px blue accent line after headings; alternating dark and light sections"
+    },
+    {
+      "id": "3a8af335-bb4e-4746-908e-3363e45494af",
+      "name": "veliora-corporate",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese B2B technology consulting firm; authoritative, future-facing, premium; high-tech precision with understated luxury; deep-space and circuit-board visual metaphors; management consulting meets deep-tech",
+      "background": "dark",
+      "palette": {
+        "primary": "#4a9eff",
+        "accent": "#4a9eff",
+        "accent_hue": "single cool accent blue (bright #78bfff); never warm, never aggressive",
+        "backgrounds": [
+          "#050e2a",
+          "#0b1a40",
+          "#122058"
+        ],
+        "text": [
+          "#ffffff",
+          "rgba(255,255,255,.65)"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 400/600/700 (logo, section titles, year labels, stat numbers; wide letter-spacing)",
+        "body": "Jost 300-600, line-height 1.8",
+        "jp": "none named (Japanese primary copy)"
+      },
+      "shape": {
+        "radius": "4px buttons, 6-8px cards and FAQ, 8px square icon badges, 50% round badges",
+        "shadow": "blue glows on hover (0 12px 36px rgba(74,158,255,.15)); nav blur(12px) only"
+      },
+      "imagery": "cool dark desaturated: cinematic tech filaments / light traces (hero 55% opacity), circuit-board macro (7%), deep-space indigo nebula (6%); four-point diamond watermark",
+      "intended_use": "technology consulting corporate landing page with timeline and stats",
+      "note": "section dividers 40x2px accent bar; translucent-blue 1px borders everywhere; scroll fade-in only"
+    },
+    {
+      "id": "a4b5e515-69ae-495d-a204-f68ed492403b",
+      "name": "veliora-business",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "B2B strategic advisory firm (Business Consulting, Marketing Strategy, IT Solutions); measured, authoritative, trustworthy; restraint and precision over flash; evidence-led (300+ companies, 98% retention)",
+      "background": "light",
+      "palette": {
+        "primary": "#2b2b2b",
+        "accent": null,
+        "accent_hue": "none - no hue in the palette; all expression from weight, spacing and serif type",
+        "backgrounds": [
+          "#ffffff",
+          "#f5f5f5",
+          "#2b2b2b (footer / invert)"
+        ],
+        "text": [
+          "#2b2b2b",
+          "#555555",
+          "#888888",
+          "#aaa on dark"
+        ]
+      },
+      "fonts": {
+        "display": "Playfair Display 700 (display headings, section titles, stat numbers)",
+        "body": "Source Sans 3 300-700",
+        "jp": "none named"
+      },
+      "shape": {
+        "radius": "0 everywhere",
+        "shadow": "none; nav has a faint 0 1px 6px; cards are 1px #ddd border only"
+      },
+      "imagery": "always full grayscale photography: mountain landscape hero with rgba(0,0,0,.45) overlay, executive portrait; four-point star watermark",
+      "intended_use": "consulting / strategic advisory landing page",
+      "note": "no scroll animations or entrance animations; link gap widens on hover; white <-> light-gray section alternation"
+    },
+    {
+      "id": "bb29900f-95cb-4ab3-9361-61bb7e27c10d",
+      "name": "veliora-zen",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese-inflected design consultancy built on the philosophy of ma (間, meaningful emptiness); Zen garden aesthetics - raked sand, misty mountains, weathered stone; contemplative, assured, understated; 'In silence, everything exists.'",
+      "background": "light",
+      "palette": {
+        "primary": "#3a3835",
+        "accent": null,
+        "accent_hue": "none - single monochromatic warm-paper scale, no saturated hues",
+        "backgrounds": [
+          "#fafaf8",
+          "#f4f3f0",
+          "#e8e7e3"
+        ],
+        "text": [
+          "#1e1d1b ink",
+          "#3a3835 charcoal",
+          "#5a5854",
+          "#9b9890 stone"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300-500 (section titles, English labels, CTAs; letter-spacing .28-.35em)",
+        "body": "Noto Serif JP 200-400, thin weights preferred, line-height 2.0",
+        "jp": "Noto Serif JP"
+      },
+      "shape": {
+        "radius": "0 anywhere",
+        "shadow": "hover only (0 8px 32px rgba(0,0,0,.07)); never at rest"
+      },
+      "imagery": "zen garden (karesansui), misty mountains, stone in raked sand; desaturated saturate(.25); pale watermark at 6%; never cropped aggressively",
+      "intended_use": "design / architecture / wellness consultancy landing page",
+      "note": "hero slow zoom 18s; CTA letter-spacing expands on hover; one icon per card (leaf, wind, droplet); section titles flanked by line decorators"
+    },
+    {
+      "id": "447271c0-7826-4d15-accd-216295d69fc3",
+      "name": "veliora-simple",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "README titled 'Chart Design - Design System': Japanese design studio for visual communication and web design; refined minimalism; 'Less but Better'; calm, professional, unhurried",
+      "background": "light",
+      "palette": {
+        "primary": "#333333",
+        "accent": null,
+        "accent_hue": "none - a single gray axis from #ffffff to #1a1a1a; hierarchy through value only",
+        "backgrounds": [
+          "#ffffff",
+          "#fafafa"
+        ],
+        "text": [
+          "#1a1a1a",
+          "#333333",
+          "gray-700"
+        ]
+      },
+      "fonts": {
+        "display": "Playfair Display (editorial accent only, e.g. 'Less but Better')",
+        "body": "DM Sans 300-700 (primary UI)",
+        "jp": "Noto Sans JP body"
+      },
+      "shape": {
+        "radius": "2px (nearly square); FAQ toggle circle",
+        "shadow": "three levels sm/md/lg; card hover lift 0 8px 30px rgba(0,0,0,.06)"
+      },
+      "imagery": "editorial photography - clean workspaces, notebooks, analog tools, muted still-lifes in warm-neutral oak/cream/stone; grayscale 30-50% by default, removed on hover; no faces",
+      "intended_use": "design studio / minimalist services landing page (960px container)",
+      "note": "outlined primary button inverts on hover; body about 14px with line-height 1.8 and wide tracking; Font Awesome 6.5.1 regular + solid"
+    },
+    {
+      "id": "cdae3f5e-c8bc-475b-a882-dcade6a7edbe",
+      "name": "veliora-blank",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese creative studio (Strategy, Design, Development); high-end, minimalist, bilingual portfolio; quiet authority, restrained; strictly monochromatic - no colour, no gradients; editorial tension between geometric sans and classical serif; 'Focus. Simplicity. Clarity.'",
+      "background": "light",
+      "palette": {
+        "primary": "#1a1a1a",
+        "accent": null,
+        "accent_hue": "none - black to white through neutral grays only",
+        "backgrounds": [
+          "#f5f5f5",
+          "#ffffff",
+          "#e8e8e8 (CTA)"
+        ],
+        "text": [
+          "#1a1a1a",
+          "#2c2c2c",
+          "#6b6b6b"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond (large quotes, portfolio titles in italic, CTA headings)",
+        "body": "DM Sans (nav, logo, English UI)",
+        "jp": "Noto Sans JP 300-700 (body, hero titles, concept headings)"
+      },
+      "shape": {
+        "radius": "0 (50% for step icons and FAQ toggles)",
+        "shadow": "none on content; header 0 2px 20px rgba(0,0,0,.06) on scroll; header blur(8px)"
+      },
+      "imagery": "all grayscale with brightness .55-.70: wide landscape hero, portfolio close-ups; four-point star watermark",
+      "intended_use": "creative studio / portfolio landing page",
+      "note": "English display words one per line with a period; fade-up on scroll; grid-line separated cards"
+    },
+    {
+      "id": "4c2cfc82-47ab-474a-9192-9db069b12e26",
+      "name": "veliora-mono",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "premium minimalist creative studio (branded 'Chart Design' on the sample); zero-hue palette, sharp-edged geometry, editorial typography, always-monochrome photography; precise, confident, unhurried, gallery-like",
+      "background": "light",
+      "palette": {
+        "primary": "#111111",
+        "accent": null,
+        "accent_hue": "none - no hue permitted anywhere, not even a warm or cool cast",
+        "backgrounds": [
+          "#ebebeb page",
+          "#ffffff cards",
+          "#1a1a1a dark footer/hero"
+        ],
+        "text": [
+          "#111111",
+          "#444444"
+        ]
+      },
+      "fonts": {
+        "display": "Playfair Display 400/700 (italic decorative)",
+        "body": "DM Sans 300-700",
+        "jp": "none named; JetBrains Mono for code, data labels and index numbers (01, 02)"
+      },
+      "shape": {
+        "radius": "0 or 2px; circle only on scroll indicator button",
+        "shadow": "only on card hover 0 8px 24px rgba(0,0,0,.08); no blur or backdrop-filter"
+      },
+      "imagery": "always grayscale and high contrast (grayscale(100%) contrast(1.1)): abstract geometry, architectural interiors, studio still-lifes, material surfaces; hover darkens to brightness .4",
+      "intended_use": "design studio marketing website (900px narrow editorial container)",
+      "note": "sentence case everywhere, no ALL CAPS; fadeUp on scroll; solid black primary button and outlined button"
+    },
+    {
+      "id": "28e4f605-be8f-4892-8709-5007ee4a3048",
+      "name": "veliora-light",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese creative studio website - minimal, editorial, bilingual; calm refinement; architectural studio meets Japanese minimalism; quiet authority",
+      "background": "light",
+      "palette": {
+        "primary": "#333333",
+        "accent": null,
+        "accent_hue": "none - tight neutral spectrum of grays and whites; no accent color exists",
+        "backgrounds": [
+          "#f4f4f4",
+          "#d9d9d9 (service cards)",
+          "#ffffff"
+        ],
+        "text": [
+          "#333333",
+          "#444"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond (hero titles, stat numbers, logo)",
+        "body": "Noto Sans JP 300/400 (Japanese body)",
+        "jp": "Noto Sans JP; Source Sans 3 for English UI, nav, labels, badges"
+      },
+      "shape": {
+        "radius": "0 for cards, 4px primary CTA button, 50% scroll FAB",
+        "shadow": "sparing: scroll button 0 4px 16px .12; card hover 0 6px 20px .08; blur(1px) on hero bokeh image only"
+      },
+      "imagery": "cool desaturated, almost monochrome: natural-light interiors, architectural surfaces, editorial still-life, minimalist skyscapes; grayscale 60-100%; bokeh light-particle hero; no people",
+      "intended_use": "minimal creative / design studio landing page",
+      "note": "section titles = label + 1px horizontal rule extending right; fade-in + translateY on scroll; Font Awesome solid"
+    },
+    {
+      "id": "ac201aa2-82f4-4d25-beb6-1782acd45557",
+      "name": "veliora-air",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "minimalist luxury design studio (UI/UX, brand identity, tech solutions); Japanese wabi-sabi meets European high-modernism; 'Design that breathes.'; quiet, confident, unhurried",
+      "background": "light",
+      "palette": {
+        "primary": "#4a5568",
+        "accent": "#4a5568",
+        "accent_hue": "slate blue-gray (icons, active states, CTAs; hover #2d3748); mist #d8dce4 as the cool 'air' of the hero",
+        "backgrounds": [
+          "#f4f3f0 warm parchment",
+          "#d8dce4 hero mist",
+          "#ffffff",
+          "#fafafa cards"
+        ],
+        "text": [
+          "#2c2c2c",
+          "#5a5a5a",
+          "#8a8a8a"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond (or Libre Baskerville) 300-500, generous tracking",
+        "body": "Noto Sans JP 300-500, line-height 1.8-2.0",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "0 (50% for process step icon holders; 6px decorative section label chips)",
+        "shadow": "almost none: card hover 0 12px 40px .06; header on scroll 0 2px 20px .06; header blur(12px)"
+      },
+      "imagery": "muted desaturated (saturate .6-.7): watercolor abstracts, sculptural minimalist art, misty landscapes, macro material textures; images framed in 1px borders like gallery frames; very slow 6s hover zoom",
+      "intended_use": "minimal design studio landing page",
+      "note": "single 1px #d5d5d5 line is the primary structural element; fadeUp stagger 80ms; Font Awesome solid"
+    },
+    {
+      "id": "eb066912-d905-481c-a6ab-190224e89086",
+      "name": "veliora-pure",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "luxury interior design studio; restraint, warmth, editorial precision; warm minimalism - natural stone, linen, oak, brass; 'Shaping Essence Into Space'",
+      "background": "light",
+      "palette": {
+        "primary": "#2a2a2a",
+        "accent": "#8a8578",
+        "accent_hue": "taupe (warm greige palette; no blues, greens or saturated hues)",
+        "backgrounds": [
+          "#f5f4f2 ivory",
+          "#eae8e4 linen",
+          "#c8c4be stone (borders)"
+        ],
+        "text": [
+          "#2a2a2a ink"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond (all display, headings, narrative, wordmark; wide tracking .08-.20em)",
+        "body": "Noto Sans JP (body, navigation, labels, UI)",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "0 everywhere except 50% process step circles",
+        "shadow": "minimal: shadow-card 0 2px 16px 6%; hairline borders preferred; header blur(10px) on scroll"
+      },
+      "imagery": "warm editorial, no people, natural light: stone, oak, linen, brass, calm symmetrical compositions; hero muted brightness .6 saturate .3; bento portfolio grid 16:9 with 6px gap",
+      "intended_use": "interior-design / architecture / lifestyle studio landing page",
+      "note": "fade-up on scroll 700ms; process icons 56px circles invert on hover; Font Awesome 6"
+    },
+    {
+      "id": "668d3908-51b8-4484-ac12-19c54b04ad12",
+      "name": "veliora-clean",
+      "status": "read",
+      "readme_lines": 214,
+      "mood": "premium digital agency (web design, SEO, digital marketing) with Japanese-influenced minimalist philosophy 'シンプルさこそが究極の洗練である'; restrained typography, dark navy tones, cinematic full-bleed grayscale photography; professional, refined, understated",
+      "background": "mixed",
+      "palette": {
+        "primary": "#2d3e50",
+        "accent": null,
+        "accent_hue": "none - README: 'No accent colors; no pops of color. The palette is intentionally monochromatic.' navy family covers all brand/interactive elements",
+        "backgrounds": [
+          "#f4f5f7 off-white",
+          "#ffffff",
+          "dark page background behind an 880px white card"
+        ],
+        "text": [
+          "#1e2a35",
+          "#4a5568",
+          "#718096"
+        ]
+      },
+      "fonts": {
+        "display": "Playfair Display 400/600/700 (hero quotes, stat numbers, watermark ornaments)",
+        "body": "DM Sans 300-600 (nav, body, labels, buttons)",
+        "jp": "none specified (Japanese hero tagline set in display face)"
+      },
+      "shape": {
+        "radius": "3-4px cards and buttons, 50% icon badges, 2px stat bars",
+        "shadow": "two levels only (sm resting, md hover), navy-based at low opacity, never black; page-level drop shadow"
+      },
+      "imagery": "hero images always grayscale (grayscale(100%) brightness .65 with dark gradient); editorial grayscale(20%): urban night skylines, misty mountain landscapes; no illustrations, patterns or textures",
+      "intended_use": "agency / consultancy single-page marketing site, narrow column (max 880px)",
+      "note": "1px #dde1e7 borders everywhere; hover lifts 2px with no colour change; navy 44px circular icon badges; hero chevron bounce is the only loop; this is the system the gemini-38-tts project originally adopted"
+    },
+    {
+      "id": "3b08e026-ba75-46c7-9131-bdfa05060b9e",
+      "name": "veliora-classic",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese luxury brand in premium real estate, interior design and lifestyle consulting; refined taste, trust, timeless elegance; formal, calm, authoritative; vertical-text layouts; 'Timeless Design, Modern Standard'",
+      "background": "mixed",
+      "palette": {
+        "primary": "#1b1b3a",
+        "accent": "#c4a160",
+        "accent_hue": "burnished gold (single accent; light #d4b87a) against deep navy; warm-cool contrast",
+        "backgrounds": [
+          "#1b1b3a",
+          "#12122a",
+          "#ffffff",
+          "#f8f7f4"
+        ],
+        "text": [
+          "#2a2a2a",
+          "#555555"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond (logo, section labels, year numbers, italic gold taglines)",
+        "body": "Shippori Mincho 400-800 + Noto Serif JP (all body and headings)",
+        "jp": "Shippori Mincho / Noto Serif JP; vertical writing-mode is a brand-defining motif"
+      },
+      "shape": {
+        "radius": "0 everywhere except 50% circles (service icons, stat circles, Q/A badges)",
+        "shadow": "none at rest; card shadow on hover; header scroll shadow"
+      },
+      "imagery": "warm, neutral, cinematic: minimal living rooms, offices, architecture, cityscape at dusk, house exteriors; amber and beige tones; 4-column edge-to-edge gallery strips",
+      "intended_use": "luxury real-estate / interior / lifestyle landing page (hero, concept, service, gallery, history timeline, performance, FAQ)",
+      "note": "inline stroke SVG (Lucide-style) icons in 64px navy-bordered circles, no icon CDN; gold flanked-line section divider"
+    },
+    {
+      "id": "4c545382-e27e-4296-ab67-603d9aeeb9ee",
+      "name": "veliora-standard",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "premium Japanese B2B consulting and professional-services firm; international business sophistication with understated luxury; clean, authoritative, trustworthy; 'a benchmark of quality'",
+      "background": "mixed",
+      "palette": {
+        "primary": "#1b2d4f",
+        "accent": "#c9a84c",
+        "accent_hue": "navy-dominant (#1b2d4f, darkest #0f1c33, accent navy #3a5a8c) with a restrained gold #c9a84c",
+        "backgrounds": [
+          "#ffffff",
+          "#f0f2f5",
+          "#f7f8fa"
+        ],
+        "text": [
+          "#2c2c2c",
+          "#666666"
+        ]
+      },
+      "fonts": {
+        "display": "Playfair Display with italic (hero H1, section titles)",
+        "body": "Source Sans 3 (13-15px, dense)",
+        "jp": "Noto Sans JP"
+      },
+      "shape": {
+        "radius": "0 cards (signature sharp corners), 2px buttons, 50% process circles",
+        "shadow": "none at rest; hover 0 12px 32px rgba(0,0,0,.07); header scroll 0 2px 20px"
+      },
+      "imagery": "professional cool-to-neutral photography: night city skyline hero with heavy navy gradient, multiracial business meetings in glass offices, sky/cloud texture behind stats; no illustrations",
+      "intended_use": "B2B consulting / professional-services landing page (3 service cards, about, stats, process, FAQ)",
+      "note": "primary button inverts to ghost on hover; underline slides in from the left on nav links; 2px navy-bordered FAQ emphasis box"
+    },
+    {
+      "id": "76c9ccf9-b2a9-4253-96c3-92e8c657cc1d",
+      "name": "veliora-prime",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "premium B2B strategy and management consulting firm in Japan and internationally; executive sophistication with analytical rigor; measured, authoritative, elite; dark luxury 'velvet' feel; deep navy monochrome",
+      "background": "dark",
+      "palette": {
+        "primary": "#0a0e1a",
+        "accent": "#c0c8d8",
+        "accent_hue": "none chromatic - navy ramp (#0a0e1a, #0d1225, #111832, #1a2340, #243054, #2a3a6e) with silver #c0c8d8 / #d8dde8 text; zero warm colours in UI",
+        "backgrounds": [
+          "#0a0e1a",
+          "#0d1225",
+          "#111832",
+          "white-ish service cards rgba(255,255,255,.92)"
+        ],
+        "text": [
+          "#f0f2f6",
+          "#c0c8d8",
+          "#8a92a8"
+        ]
+      },
+      "fonts": {
+        "display": "Playfair Display 400/700 (headlines, section titles, large numerals)",
+        "body": "Noto Sans JP 300-700",
+        "jp": "Noto Sans JP; Cormorant Garamond italic for editorial accents and pull quotes"
+      },
+      "shape": {
+        "radius": "0 on buttons and cards; 8px on service icon containers",
+        "shadow": "none on base surfaces; hover 0 12px 40px rgba(0,0,0,.3); header blur(16px)"
+      },
+      "imagery": "cool cinematic blue-toned photography dimmed to .35-.70 brightness: cityscapes, chess (strategy metaphor), boardrooms, technology networks, corporate portraits; fixed SVG fractal-noise at 2.5%; elliptical radial overlays",
+      "intended_use": "strategy / management consulting landing page with inverted white service cards",
+      "note": "4-column gallery strips between sections; nav underline grows from 0 to 100%; 16 photography assets"
+    },
+    {
+      "id": "9d7023e6-5541-4cb4-a580-f677944cccf1",
+      "name": "veliora-core",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "next-generation enterprise digital-innovation platform (cloud infrastructure, AI integration, full-stack development, creative design, data analytics) for Japanese enterprise; dark navy, futuristic, high-tech; authoritative, minimal, precise; no emoji, no exclamation marks",
+      "background": "dark",
+      "palette": {
+        "primary": "#1a6eff",
+        "accent": "#3d9bff",
+        "accent_hue": "electric blue #1a6eff / light blue #3d9bff / cyan #00d4ff / gold #f5a623 (gold used sparingly, one of four cards); cool desaturated blues, no warm tones in imagery",
+        "backgrounds": [
+          "#020b18 page",
+          "#04111f",
+          "#071828 card",
+          "#081e32 elevated card",
+          "contact banner gradient #051630 to #0a2850"
+        ],
+        "text": [
+          "#ffffff",
+          "#7a9ab8 muted cool blue-grey"
+        ]
+      },
+      "fonts": {
+        "display": "Rajdhani 700 (geometric condensed: headings, stats, wordmark, numbered steps; labels tracking 4px)",
+        "body": "Exo 2 300-900",
+        "jp": "none named (Japanese primary copy; English eyebrow labels in ALL CAPS)"
+      },
+      "shape": {
+        "radius": "12px cards, 14px/8px icon wraps, 50px full-pill buttons and badges",
+        "shadow": "button glow on hover; card top radial glow rgba(26,110,255,.08); borders rgba(29,107,200,.25) turning #3d9bff on hover; nav blur(14px)"
+      },
+      "imagery": "dark cool-blue futuristic/sci-fi photography and 3D renders (data networks, server rooms, holographic interfaces, robotic arms, circuit boards, energy core) at brightness .45-.55 saturate 1.2-1.4; blue 135deg overlay; no illustrations or line art",
+      "intended_use": "B2B SaaS / platform landing page (hero, why, services, process, stats, FAQ, contact banner)",
+      "note": "Font Awesome 6.5 solid icons in tinted rounded boxes; fade-up stagger 0.12/0.22/0.32s; no bounce or spring"
+    },
+    {
+      "id": "f448885a-007b-43ad-8010-37964b4756ff",
+      "name": "veliora-grid",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "minimal grid-forward digital agency; architectural drafting + editorial print; precision, confidence, professionalism without flash; for premium industries (real estate, finance, tech); 'Architecture for the Digital Age'",
+      "background": "light",
+      "palette": {
+        "primary": "#1b2535",
+        "accent": null,
+        "accent_hue": "none - 'The only accent is navy itself'; stepped monochromatic navy for data viz",
+        "backgrounds": [
+          "#ffffff",
+          "#f2f3f5 gray-100",
+          "#1b2535 showcase section / footer"
+        ],
+        "text": [
+          "#1b2535",
+          "#5a6272",
+          "#9aa0ab muted"
+        ]
+      },
+      "fonts": {
+        "display": "Syne 800/700 (headings, hero 52px, tracking -0.02em)",
+        "body": "DM Sans 300-600",
+        "jp": "none named (source copy Japanese)"
+      },
+      "shape": {
+        "radius": "0 on all rectangles; 2px FAQ toggle; 50% workflow dots",
+        "shadow": "none - 1px #d4d8de borders replace shadows (1.5px on icon boxes); 40px grid-line background pattern at 35%"
+      },
+      "imagery": "always grayscale (grayscale 100%), architectural/urban (concrete, glass, night cityscapes); brightness .7 on navy sections",
+      "intended_use": "agency marketing site with strict border-based grid: 2-column hero/about, 3-column services, 5-column stat rows, FAQ",
+      "note": "Font Awesome solid icons inside 36x36 square bordered boxes; logo = 2x2 grid of navy squares; hover = background fills gray-100, no scale"
+    },
+    {
+      "id": "281b497c-49cc-4884-a160-0cec08daaece",
+      "name": "veliora-minimal",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "minimal luxury web-design agency (Veliora by Chart Design, Japan); editorial, quiet confidence, exclusivity through omission; 'Elevate Your Vision.' / 'Less Is More.'; narrow 900px editorial column",
+      "background": "light",
+      "palette": {
+        "primary": "#1a1a1a",
+        "accent": null,
+        "accent_hue": "none - pure monochromatic, near-black to warm off-white in five neutral stops; images provide all chromatic interest",
+        "backgrounds": [
+          "#e8e8e8 page",
+          "#efefef alt",
+          "#f5f5f5 cards",
+          "#2b2b2b contact"
+        ],
+        "text": [
+          "#1a1a1a",
+          "#6b6b6b",
+          "#c8c8c8 borders"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300-600 + italics (hero, headings, watermark 6-6.5rem at 5.5% opacity)",
+        "body": "Jost 200-500 (nav tracking .2-.25em ALL CAPS, buttons, labels)",
+        "jp": "none named"
+      },
+      "shape": {
+        "radius": "0 anywhere",
+        "shadow": "none on cards; 900px site column has 0 0 60px rgba(0,0,0,.15)"
+      },
+      "imagery": "dramatic landscapes (mountain above clouds), coastal aerials, warm residential interiors, minimal product shots; rest filter grayscale .2 brightness .95; hero brightness .6 grayscale .4; hover reveals colour",
+      "intended_use": "one-page agency marketing site (services, process, stats with progress ring, FAQ, contact form)",
+      "note": "the default DS for new projects; Font Awesome 6 (regular preferred for concept icons); hero caret bounce is the only loop; 4px gaps between image tiles"
+    },
+    {
+      "id": "25327c2c-f9cf-43c7-b3e0-4e732a09353c",
+      "name": "veliora-system",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "B2B infrastructure platform for next-generation API and distributed-systems architecture; Japanese enterprise customers; terse, declarative, technical credibility over warmth; period-terminated headings ('Systematic Integrity.'); bilingual JA/EN",
+      "background": "dark",
+      "palette": {
+        "primary": "#1e8fff",
+        "accent": "#00c6ff",
+        "accent_hue": "electric blue #1e8fff + bright cyan #00c6ff; no warm tones anywhere; cyan unit suffix on white numbers (99.99%, <100ms)",
+        "backgrounds": [
+          "#030a18 base",
+          "#0d1e35",
+          "card gradient 145deg rgba(10,22,42,.95) to rgba(6,15,30,.95)",
+          "60px CSS grid pattern at 8% blue"
+        ],
+        "text": [
+          "white",
+          "muted blue-grey"
+        ]
+      },
+      "fonts": {
+        "display": "Rajdhani 600/700 (headings, stats, logo)",
+        "body": "Exo 2 300-800",
+        "jp": "none named (Japanese body copy); Share Tech Mono 400 for dates, codes, timestamps"
+      },
+      "shape": {
+        "radius": "2px maximum, mostly 0",
+        "shadow": "glow-first: 0 0 20px rgba(30,143,255,.35) on hover; icon text-shadow glow; hero glow pulse; 1px borders rgba(30,143,255,.22), .5 on hover; top 2px cyan gradient line on card hover"
+      },
+      "imagery": "dark moody deep navy/teal AI-generated renders (futuristic architecture, crystal geometry, data-network structures, control rooms); filter hue-rotate(200deg) saturate(1.3) brightness(.7) with mix-blend-mode screen; small star watermark on each image",
+      "intended_use": "B2B API / infrastructure platform marketing homepage (hero, features, reliability stats, deployment steps, roadmap, FAQ)",
+      "note": "Font Awesome 6.5 solid cyan icons in 64x64 bordered containers; animated particle canvas on hero; fade-in on scroll 0.6s; no spring or bounce"
+    },
+    {
+      "id": "3de3ed5c-cfb5-43e8-b092-7a9d5ef35b49",
+      "name": "veyra-pisces",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese creative agency (brand strategy, web production, digital marketing); deep sea and Pisces constellation; calm, assured, poetic; 'Dive into the Essence.'",
+      "background": "dark",
+      "palette": {
+        "primary": "#1a6fd4",
+        "accent": "#00bfff",
+        "accent_hue": "oceanic blues in 190-210 degree hue range: CTA #1a6fd4, hover #2196f3, electric accent #00bfff, soft #4fc3f7; no warm tones",
+        "backgrounds": [
+          "#050c1a",
+          "#071428",
+          "#0a1828"
+        ],
+        "text": [
+          "#ffffff",
+          "#b0c4de",
+          "#6a8aaa"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300-400",
+        "body": "Montserrat 300-500 for UI",
+        "jp": "Noto Serif JP 300-400"
+      },
+      "shape": {
+        "radius": "0 everywhere (50% only on process step icons)",
+        "shadow": "blue glow on card hover; blur only on nav and scroll-to-top"
+      },
+      "imagery": "deep ocean abyss, bioluminescent fluid currents, cosmic node network, nebula texture; CSS filter brightness .6-.8 saturate 1.3-1.5 hue-rotate 165-180deg to force teal/navy; four-point star watermark",
+      "intended_use": "creative agency / premium services landing page",
+      "note": "glassmorphism fixed nav; pulsing glow blob in hero; fadeUp entrance 1.2s; Font Awesome regular+solid in silver"
+    },
+    {
+      "id": "75e34199-4e54-42cf-9b2c-4677d71064ba",
+      "name": "veyra-libra",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "Japanese professional services firm (Planning, Design, Development); luxury, precision, harmony; 'Balance Creates True Value'; celestial and nature photography",
+      "background": "mixed",
+      "palette": {
+        "primary": "#c9a245",
+        "accent": "#c9a245",
+        "accent_hue": "gold (single accent; light #e2c27a, dark #a07830 on cream)",
+        "backgrounds": [
+          "#07091a",
+          "#0d1130",
+          "#131840",
+          "#f4ede0 (cream)",
+          "#faf6f0"
+        ],
+        "text": [
+          "white/cream on navy",
+          "dark on cream"
+        ]
+      },
+      "fonts": {
+        "display": "Cormorant Garamond 300-600 (hero, headings, stats, wordmark)",
+        "body": "Zen Kaku Gothic New 300 (Japanese prose, 14px, line-height 1.9)",
+        "jp": "Zen Kaku Gothic New; Montserrat for nav, labels, buttons"
+      },
+      "shape": {
+        "radius": "0 everywhere",
+        "shadow": "gold glow on card hover; text-shadow on hero; blur only on nav"
+      },
+      "imagery": "two registers: dark celestial (night skies, mountain silhouettes, nebulae at brightness .15-.25) and light nature (misty hillsides, stone paths, architecture at .7)",
+      "intended_use": "professional / consulting / design services landing page",
+      "note": "scroll-triggered SVG progress rings; only gold borders (no neutral borders); balance-scale brand symbol; Font Awesome 6.5.0"
+    },
+    {
+      "id": "ba93c1d9-b433-4336-8b3d-f2c2531ec100",
+      "name": "veliora-studio",
+      "status": "read",
+      "readme_lines": "full",
+      "mood": "high-end creative studio (digital experience design, branding, web development, digital marketing); architectural minimalism + refined digital craft; luxury agency with Japanese sensibility; quiet authority, spare, declarative; 'WE CRAFT DIGITAL EXPERIENCE'",
+      "background": "dark",
+      "palette": {
+        "primary": "#2a52cc",
+        "accent": "#3a6aff",
+        "accent_hue": "single electric blue (#2a52cc brand, #3a6aff bright) on near-black neutral surfaces",
+        "backgrounds": [
+          "#0c0c0e page",
+          "#111114",
+          "#16161a",
+          "#1b1b1f card",
+          "#202026 elevated"
+        ],
+        "text": [
+          "#f0f0f4",
+          "#8888a0 muted",
+          "#555568 dim"
+        ]
+      },
+      "fonts": {
+        "display": "Rajdhani (always uppercase in headings, tracking .08-.12em)",
+        "body": "Noto Sans JP light-medium",
+        "jp": "Noto Sans JP; Playfair Display italic for editorial / CTA emotional weight"
+      },
+      "shape": {
+        "radius": "2px universally; 50% for process icons and floating button",
+        "shadow": "active glow 0 0 30px rgba(42,82,204,.35); floating button 0 4px 20px rgba(42,82,204,.5); SVG arc drop-shadow glow; hero text-shadow; hairline borders rgba(255,255,255,.07/.12); nav-only blur(12px)"
+      },
+      "imagery": "full-bleed dark desaturated photography is the primary motif: night cityscape (blues + amber lights), concrete B&W architecture, luxury interior (warm gold), glass facades; brightness .35-.55 saturate .6-.7; no illustrations or abstract gradients",
+      "intended_use": "creative-studio portfolio + services + lead-generation marketing site (hero, philosophy, services tabs, projects, process, results, FAQ, CTA)",
+      "note": "Font Awesome 6 solid icons; hero BG slow zoom 18s; scroll-reveal fade + translateY 28px 0.65s; 60x2px accent-gradient divider; Gemini watermark visible in some photos is not part of the brand"
+    }
+  ]
+}

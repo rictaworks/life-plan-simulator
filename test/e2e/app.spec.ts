@@ -1,3 +1,4 @@
+import AxeBuilder from "@axe-core/playwright";
 import { test, expect, type Page } from "@playwright/test";
 
 async function mockServer(page: Page) {
@@ -140,4 +141,132 @@ test("event bounds, stale results and session expiry", async ({ page }) => {
     page.getByRole("link", { name: "Googleでログイン" }),
   ).toBeVisible();
   await expect(page.getByLabel("月手取り（円）")).toHaveCount(0);
+});
+
+async function accessible(page: Page) {
+  const result = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+    .analyze();
+  expect(result.violations).toEqual([]);
+}
+
+test("login design exposes no private forms and passes accessibility checks", async ({
+  page,
+}) => {
+  await page.route("**/api/**", (route) =>
+    route.fulfill({ status: 401, json: { error: "unauthorized" } }),
+  );
+  await page.goto("/");
+  await expect(
+    page.getByRole("link", { name: "Googleでログイン" }),
+  ).toBeVisible();
+  await expect(page.getByLabel("月手取り（円）")).toHaveCount(0);
+  await accessible(page);
+  await test.info().attach("login", {
+    body: await page.screenshot({
+      path: test.info().outputPath("screen.png"),
+      fullPage: true,
+    }),
+    contentType: "image/png",
+  });
+});
+
+test("design stays accessible through errors, comparison, detail tables and confirmation", async ({
+  page,
+}) => {
+  test.setTimeout(60000);
+  await mockServer(page);
+  await page.goto("/");
+  await expect(
+    page.getByRole("button", { name: "架空サンプルを開く" }),
+  ).toBeEnabled();
+  await page.keyboard.press("Tab");
+  await expect(
+    page.getByRole("link", { name: "条件設定へ移動" }),
+  ).toBeFocused();
+  await page.keyboard.press("Enter");
+  await page.getByRole("button", { name: "架空サンプルを開く" }).click();
+  await page.getByLabel("期間（か月）").fill("12");
+  await page.getByLabel("月手取り（円）").fill("");
+  await page
+    .getByRole("button", { name: "シミュレーション", exact: true })
+    .click();
+  await expect(page.getByLabel("月手取り（円）")).toHaveAttribute(
+    "aria-invalid",
+    "true",
+  );
+  await accessible(page);
+  await page.getByLabel("月手取り（円）").fill("300000");
+  await page.getByRole("button", { name: "ケースを複製して比較" }).click();
+  await page.getByLabel("投資配分（%）").fill("75");
+  await page
+    .getByRole("button", { name: "シミュレーション", exact: true })
+    .click();
+  await page.getByText("基準の月次明細", { exact: true }).click();
+  await expect(
+    page.getByRole("region", { name: "基準 月次明細", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page
+      .getByRole("region", { name: "基準 月次明細", exact: true })
+      .getByRole("cell", { name: "2,200,000円", exact: true }),
+  ).toBeVisible();
+  await accessible(page);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await test.info().attach("comparison-and-table", {
+    body: await page.screenshot({
+      path: test.info().outputPath("screen.png"),
+      fullPage: true,
+    }),
+    contentType: "image/png",
+  });
+  const invoke = page.getByRole("button", { name: "新規作成", exact: true });
+  await invoke.click();
+  await expect(page.getByRole("button", { name: "キャンセル" })).toBeFocused();
+  await accessible(page);
+  await page.keyboard.press("Escape");
+  await expect(invoke).toBeFocused();
+});
+
+test("320px layout keeps controls inside the viewport and tables scrollable", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 320, height: 740 });
+  await mockServer(page);
+  await page.goto("/");
+  await page.getByRole("button", { name: "架空サンプルを開く" }).click();
+  await page.getByRole("button", { name: "イベントを追加" }).click();
+  await page
+    .getByLabel("イベント名")
+    .fill("架空イベントの長い名前を使って折り返しを確認します");
+  await page
+    .getByRole("button", { name: "シミュレーション", exact: true })
+    .click();
+  await page.getByText("基準の月次明細", { exact: true }).click();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  const table = page.getByRole("region", {
+    name: "基準 月次明細",
+    exact: true,
+  });
+  await table.focus();
+  await expect(table).toBeFocused();
+  expect(await table.evaluate((el) => el.scrollWidth > el.clientWidth)).toBe(
+    true,
+  );
+  await page.keyboard.press("End");
+  await test.info().attach("narrow-layout", {
+    body: await page.screenshot({
+      path: test.info().outputPath("screen.png"),
+      fullPage: true,
+    }),
+    contentType: "image/png",
+  });
 });
