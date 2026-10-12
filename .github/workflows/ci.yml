@@ -18,6 +18,7 @@ jobs:
           node-version: "24"
       - run: timeout 180 npm ci --cache "$RUNNER_TEMP/npm-cache"
       - run: timeout 180 npm run check
+      - run: timeout 180 node scripts/check-production-install.mjs
       - run: timeout 180 npx playwright install --with-deps chromium
       - run: timeout 180 npm run test:e2e
       - run: timeout 60 npm audit --omit=dev --audit-level=high --cache "$RUNNER_TEMP/npm-cache"

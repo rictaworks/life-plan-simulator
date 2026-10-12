@@ -34,6 +34,9 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
   const port = Number(env.PORT ?? "3000");
   if (!Number.isInteger(port) || port < 1 || port > 65535)
     throw Error("PORT must be an integer between 1 and 65535");
+  const host = env.HOST ?? "127.0.0.1";
+  if (host !== "127.0.0.1" && host !== "0.0.0.0")
+    throw Error("HOST must be 127.0.0.1 or 0.0.0.0");
   return {
     origin,
     production,
@@ -42,6 +45,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
     key: Buffer.from(hexKey, "hex"),
     databasePath,
     port,
+    host,
     redirectUri: `${origin}/auth/callback`,
   };
 }
